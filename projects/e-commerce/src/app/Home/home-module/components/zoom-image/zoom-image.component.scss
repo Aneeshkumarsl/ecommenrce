@@ -1,0 +1,287 @@
+@import '../../../../styles/variables.scss';
+
+.card{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: $cardShadow;
+    padding: 16px;
+    border-radius: 4px;
+    img {
+        max-width: 320px;
+        height: auto;
+        cursor: zoom-in;
+        cursor: url('/assets/images/zoom.svg') 10 10, zoom-in;
+        @media (max-width:768px) {
+            cursor:pointer !important
+        }
+        @media (max-width:390px) {
+            max-width: 260px;
+        }
+       
+    }
+}
+.card-height {
+    height: 485px;
+}
+.image {
+    flex-basis: 40%;
+}
+.details {
+    flex-basis: 40%;
+}
+.zoom-viewer {
+    box-shadow: $cardShadow;
+    position: absolute;
+    display: none;
+    background-repeat: no-repeat;
+    padding: 40px;
+    z-index: 99;
+    margin-left: 25px;
+    width: 31% !important;
+    border-radius: 4px;
+    height: 485px !important;
+    @media (max-width:1207px) {
+        width: 47% !important;
+        height: 482px !important;
+    }
+}
+
+.product-middle {
+    padding: 0 25px 0 25px;
+    h2 {
+        font-size: 30px;
+        text-transform: capitalize;
+        line-height: 1;
+        letter-spacing: 0.02em;
+        margin-bottom: 10px;
+        font-weight: 600;
+    }
+    h4 {
+        font-size: 18px;
+        text-transform: capitalize;
+        line-height: 1;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        del {
+            color: #777;
+            font-size: 18px;
+        }
+        span {
+            padding-left: 10px;
+            color:  $orangeColor !important;
+            font-size: 25px;
+        }
+      }
+      .price{
+        font-size: 26px;
+        font-weight: 600;
+        margin: 10px 0;
+      }
+      .discription {
+        padding-top: 15px;
+        padding-bottom: 20px;
+        border-top: 1px dashed #ddd;
+        border-bottom: 1px dashed #ddd;
+        .productDiscription {
+            line-height: 24px;
+            margin-top: 5px;
+            color: #777 !important;
+        }
+      }
+      .stock {
+        color: #ef6c00;
+        font-size: 14px;
+        font-weight: 600;
+      }
+      .quantityClass {
+          input {
+            width: 50px;
+            height: 40px;
+            border: 2px solid $yellowColor;
+            border-radius: 4px;
+            text-align: center;
+            background: $yellowColor;
+            font-weight: bold;
+            font-size: 17px;
+            :focus {
+                outline: none;
+            }
+          }
+          button{
+            height: 40px;
+            width: 40px;
+            border: 0;
+            background: $orangeColor !important;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: $whiteColor;
+            font-size: 20px;
+            box-shadow: $buttonBoxShadow;
+            &:disabled {
+               opacity: 0.6;
+            }
+            &:active {
+                transform: scale(0.95);
+            }
+          }
+      }
+
+      .button-class{
+        background: $orangeColor;
+        border: 0px;
+        font-size: 14px;
+        font-weight: 700;
+        margin: 5px 0;
+        display: inline-block;
+        border-radius: 4px;
+        color: $whiteColor;
+        padding: 11px 27px;
+        text-transform: uppercase;
+        box-shadow: $vertiButtonShadow;
+        &:active {
+            transform: scale(0.95);
+        }
+    }
+}
+.instructions {
+    flex-basis: 20%;
+    .cardClass {
+        margin-bottom: 10px;
+        background:$lightBlack !important;
+        border: 0;
+        box-shadow: none !important;
+    }
+    i {
+        color: $orangeColor;
+        font-size: 41px;
+        margin-right: 10px;
+        line-height: 65px;
+        clear: both;
+        width: auto;
+        height: 100%;
+        padding: 0 3px;
+    }
+    p {
+        font-weight: bold;
+        font-size: 14.5px;
+        color: $blackColor;
+        text-transform: uppercase;
+    }
+    span{
+       color: $mediumGrayColor;
+    }
+}
+
+.small-card-class {
+    height: 8rem;
+    @media (max-width:853px) {
+        height: 6rem;
+    }
+    @media (max-width:768px) {
+        height: 8rem;
+    }
+    @media (max-width:510px) {
+        height: 6rem;
+    }
+    @media (max-width:390px) {
+        height: 5rem;
+    }
+    &:hover {
+        img {
+            transform: scale(1.1);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+        }
+    }
+    &:not(:first-child){
+        margin-left: 2px;
+    }
+    &:not(:last-child){
+        margin-right: 2px;
+    }
+    box-shadow: none !important;
+    img {
+    max-width: 80px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+    @media (max-width:973px) {
+        max-width: 70px;
+    }
+    @media (max-width:895px) {
+        max-width: 65px;
+    }
+    @media (max-width:853px) {
+        max-width: 54px;
+    }
+    @media (max-width:768px) {
+        max-width: 80px;
+    }
+    @media (max-width:510px) {
+        max-width: 65px;
+    }
+    @media (max-width:450px) {
+        max-width: 50px;
+    }
+    @media (max-width:390px) {
+        max-width: 40px;
+    }
+    }
+}
+
+@media (max-width:1207px) {
+    .instructions {
+        flex-basis: 100%;
+    }
+    .image {
+        flex-basis: 50%;
+    }
+    .details {
+        flex-basis: 49.9%;
+    }
+    .product-middle{
+        padding-right: 0 !important;
+    }
+
+    .cardClass {
+        flex-basis: 24%;
+    }
+    .card-outer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+}
+@media (max-width:930px) {
+    .cardClass {
+        flex-basis: 49.5%;
+    }
+}
+@media (max-width:500px) {
+    .cardClass {
+        flex-basis: 100%;
+    }
+}
+@media (max-width:1190px) {
+    .zoom-viewer {
+        width: 43% !important;
+        height: 482px !important;
+    }
+}
+@media (max-width:768px) {
+    .image {
+        flex-basis: 100%;
+    }
+    .details {
+        flex-basis: 100%;
+    }
+    .product-middle{
+        padding-right: 0 !important;
+        padding-left: 0 !important;
+    }
+}

@@ -1,0 +1,244 @@
+@import '../../../../styles/variables.scss';
+.secondBar  {
+    background: $orangeColor;
+    padding: 15px 10px;
+}
+
+.search {
+  width: 50%;
+  height: 40px;
+  position: relative;
+  display: flex;
+}
+
+.searchTerm {
+  width: 100%;
+  border:0;
+  border-right: none;
+  padding: 5px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: $blackColor;
+  font-weight: bold;
+}
+
+.searchTerm:focus{
+  color:$blackColor;
+}
+
+.searchButton {
+  border: 1px solid $blackColor;
+  background: $blackColor;
+  text-align: center;
+  color:$whiteColor;
+
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 15px;
+  padding-right: 10px;
+  letter-spacing: 1px;
+  i {
+      color:  $orangeColor;
+  padding: 0 5px;
+  font-size: 20px;
+  }
+}
+.cart-button {
+  background: transparent;
+  border: 0;
+  font-size: 20px;
+  color: $whiteColor;
+  border: 3px solid $whiteColor;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &:active {
+    transform: scale(0.95);
+}
+
+}
+.cart-items {
+    right: -3px;
+    background:$blackColor;
+    border-radius: 50%;
+    padding: 10px;
+    font-size: 10px;
+    color: $whiteColor;
+    font-weight: 600;
+    top: -4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 17px;
+    height: 17px;
+
+}
+
+.dropDownItem {
+  z-index: 2;
+  width: 19rem;
+  border-bottom: 4px solid $orangeColor;
+  box-shadow: $dropDownBoxShadow;
+  .cardItems  {
+    p  {
+    color: $darkBlueColor;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    }
+  }
+  .items {
+    padding: 5px;
+    border-bottom: 1px solid $hrSolidColor;
+    border-top: 1px solid $hrSolidColor;
+    .content-items {
+      padding: 5px;
+      &:not(:last-child){
+        border-bottom: 2px dotted $hrSolidColor;
+      }
+    }
+    .flex-width {
+      flex-basis: 85%;
+    }
+    p {
+      font-size: 15px;
+      font-weight: 600;
+    }
+    .delete-icon-button {
+      color: $whiteColor;
+      display: flex;
+      width: 30px;
+      height: 30px;
+      align-items: center;
+      justify-content: center;
+      background: $orangeColor;
+      border-radius: 50%;
+      box-shadow: $buttonBoxShadow;
+      border: 0;
+            &:active {
+                transform: scale(0.95);
+            }
+    }
+    .multi-icon{
+      color: $darkBlueColor;
+      font-size: 13px;
+    }
+  }
+}
+
+
+@media (max-width:768px){
+  .search {
+    width: 60%;
+  }
+}
+
+
+@media (max-width:550px){
+  .direction{
+    flex-direction: column;
+    align-items: unset !important;
+    position: relative;
+  }
+  .search {
+    width: 80%;
+  }
+  .relativeClass {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-end;
+    position: absolute !important;
+    right: 5px;
+    bottom: 0;
+  }
+  .logoDiv {
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  .item-drop {
+    margin-right: unset !important;
+    margin-top: 1rem;
+  }
+}
+
+.dropDownItemOther {
+  z-index: 2;
+  width: 13rem;
+  border-bottom: 4px solid $orangeColor;
+  box-shadow: $dropDownBoxShadow; 
+  ul {
+    li{
+      display: flex;
+      align-items: center;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      &:not(:last-child) {
+        border-bottom: 1px solid $borderColor;
+      }
+      &:focus {
+        outline: unset;
+      }
+      i{
+        color: $orangeColor;
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+
+.button-class{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: $whiteColor;
+  border: 0px;
+  font-size: 13px;
+  font-weight: 900;
+  margin: 5px 0;
+  border-radius: 4px;
+  color: $orangeColor;
+  padding: 8px 8px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  &:active {
+      transform: scale(0.95);
+  }
+  &:disabled {
+    opacity: 0.6;
+ }
+}
+
+.noRec {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  border-top: 2px dotted $hrSolidColor;
+  border-bottom: 2px dotted $hrSolidColor;
+  span {
+    color: $orangeColor;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    i {
+      font-size: 40px;
+      animation: leftanime 1s linear infinite;
+      @keyframes leftanime {
+        50% {
+          transform: translateX(50px);
+          opacity: 1;
+        }
+        100% {
+          transform: translateX(50px);
+          opacity: 0;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,66 @@
+@import '../../../styles/variables.scss';
+
+h4 {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.modal-footer {
+    border-top: unset !important;
+}
+
+.close {
+    position: absolute;
+    right: -0.5rem;
+    top: -0.5rem;
+    font-size: 0.875rem;
+    font-weight: 300;
+    border-radius: 100%;
+    background-color: $orangeColor !important;
+    z-index: 4;
+    color: $whiteColor;
+    line-height: -12rem;
+    cursor: pointer;
+    text-decoration: none;
+    display: flex;
+    align-items: safe;
+    justify-content: center;
+    align-items: center;
+    opacity: 1 !important;
+    &:hover{
+     opacity: 1 !important;
+  background: $orangeColor !important;
+  color: $whiteColor;
+  -webkit-transform: rotate(360deg) scale(1.10);
+  -moz-transform: rotate(360deg) scale(1.10);
+  -ms-transform: rotate(360deg) scale(1.10);
+  -o-transform: rotate(360deg) scale(1.10);
+  transform: rotate(360deg) scale(1.10);
+  -webkit-transition: -webkit-transform 600ms;
+  -moz-transition: -moz-transform 600ms;
+  -ms-transition: -ms-transform 600ms;
+  -o-transition: -o-transform 600ms;
+  transition: transform 600ms;
+    }
+  }
+
+  .button-class{
+    background: $orangeColor;
+    border: 0px;
+    font-size: 14px;
+    font-weight: 700;
+    margin: 5px 0;
+    display: inline-block;
+    border-radius: 4px;
+    color: $whiteColor;
+    padding: 11px 27px;
+    text-transform: uppercase;
+    box-shadow: $vertiButtonShadow;
+    &:active {
+        transform: scale(0.95);
+    }
+}
+p {
+    font-size: 15px;
+    font-weight: 600;
+}

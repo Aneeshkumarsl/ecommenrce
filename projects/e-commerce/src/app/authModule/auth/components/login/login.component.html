@@ -1,0 +1,223 @@
+<div [ngClass]="containerClass" id="container">
+  <div class="form-container login-container">
+    <form class="div-class" [formGroup]="registerForm">
+      <h1>Register</h1>
+      <input
+        type="text"
+        placeholder="First Name"
+        formControlName="first_name"
+        [ngClass]="{
+          'is-invalid': submitted && registerFormControls.first_name.errors
+        }"
+      />
+      <div
+        *ngIf="submitted && registerFormControls.first_name.errors"
+        class="
+          invalid-feedback
+          w-100
+          d-flex
+          align-items-center
+          justify-content-start
+        "
+      >
+        <span
+          class="error-span"
+          *ngIf="registerFormControls.first_name.errors.required"
+          >First Name is required.</span
+        >
+        <span
+          class="error-span"
+          *ngIf="registerFormControls.first_name.errors.minlength"
+          >First name should be 3 character.</span
+        >
+      </div>
+      <input
+        type="text"
+        placeholder="Last Name"
+        formControlName="last_name"
+        [ngClass]="{
+          'is-invalid': submitted && registerFormControls.last_name.errors
+        }"
+      />
+      <div
+        *ngIf="submitted && registerFormControls.last_name.errors"
+        class="
+          invalid-feedback
+          w-100
+          d-flex
+          align-items-center
+          justify-content-start
+        "
+      >
+        <span
+          class="error-span"
+          *ngIf="registerFormControls.last_name.errors.required"
+          >Last name is required.</span
+        >
+      </div>
+      <input
+        type="email"
+        placeholder="Email"
+        formControlName="email"
+        [ngClass]="{
+          'is-invalid': submitted && registerFormControls.email.errors
+        }"
+      />
+      <div
+        *ngIf="submitted && registerFormControls.email.errors"
+        class="
+          invalid-feedback
+          w-100
+          d-flex
+          align-items-center
+          justify-content-start
+        "
+      >
+        <span
+          class="error-span"
+          *ngIf="registerFormControls.email.errors.required"
+          >E-mail is required.</span
+        >
+        <span class="error-span" *ngIf="registerFormControls.email.errors.email"
+          >Please enter a valid email address.</span
+        >
+      </div>
+      <input
+        type="password"
+        placeholder="Password"
+        formControlName="password"
+        [ngClass]="{
+          'is-invalid': submitted && registerFormControls.password.errors
+        }"
+      />
+      <div
+        *ngIf="submitted && registerFormControls.password.errors"
+        class="
+          invalid-feedback
+          w-100
+          d-flex
+          align-items-center
+          justify-content-start
+        "
+      >
+        <span
+          class="error-span"
+          *ngIf="registerFormControls.password.errors.required"
+          >Password is required.</span
+        >
+        <span
+          class="error-span"
+          *ngIf="registerFormControls.password.errors.minlength"
+          >Password should be 5 character.</span
+        >
+      </div>
+      <input
+        type="text"
+        number
+        placeholder="Phone"
+        maxlength="10"
+        formControlName="phone"
+        [ngClass]="{
+          'is-invalid': submitted && registerFormControls.phone.errors
+        }"
+      />
+      <div
+        *ngIf="submitted && registerFormControls.phone.errors"
+        class="
+          invalid-feedback
+          w-100
+          d-flex
+          align-items-center
+          justify-content-start
+        "
+      >
+        <span
+          class="error-span"
+          *ngIf="registerFormControls.phone.errors.required"
+          >Phone Number is required.</span
+        >
+        <span
+          class="error-span"
+          *ngIf="registerFormControls.phone.errors.maxlength"
+          >Phone Number should be 10 digits.</span
+        >
+      </div>
+      <button (click)="register()" class="register-button">Register</button>
+    </form>
+  </div>
+  <div class="form-container register-container">
+    <form class="div-class" [formGroup]="loginForm">
+      <h1>Login</h1>
+      <input
+        type="email"
+        placeholder="Email"
+        formControlName="email"
+        [ngClass]="{
+          'is-invalid': loginSubmitted && formControls.email.errors
+        }"
+      />
+      <div
+        *ngIf="loginSubmitted && formControls.email.errors"
+        class="
+          invalid-feedback
+          w-100
+          d-flex
+          align-items-center
+          justify-content-start
+        "
+      >
+        <span class="error-span" *ngIf="formControls.email.errors.required"
+          >E-mail is required.</span
+        >
+        <span class="error-span" *ngIf="formControls.email.errors.email"
+          >Please enter a valid email address.</span
+        >
+      </div>
+      <input
+        type="password"
+        placeholder="Password"
+        formControlName="password"
+        [ngClass]="{
+          'is-invalid': loginSubmitted && registerFormControls.password.errors
+        }"
+      />
+      <div
+        *ngIf="loginSubmitted && formControls.password.errors"
+        class="
+          invalid-feedback
+          w-100
+          d-flex
+          align-items-center
+          justify-content-start
+        "
+      >
+        <span class="error-span" *ngIf="formControls.password.errors.required"
+          >Password is required.</span
+        >
+      </div>
+
+      <a href="javascript:void(0)" class="forgot-password"
+        >Forgot your password?</a
+      >
+      <button type="submit" (click)="login()">Login</button>
+    </form>
+  </div>
+  <div class="overlay-container">
+    <div class="overlay">
+      <div class="overlay-panel overlay-left">
+        <h1 class="h1-class">Welcome Back!</h1>
+        <p class="p-class">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        </p>
+        <button class="ghost" id="signIn" (click)="signIn()">Login</button>
+      </div>
+      <div class="overlay-panel overlay-right">
+        <h1 class="h1-class">Hello, Friend!</h1>
+        <p class="p-class">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        </p>
+        <button class="ghost" id="signUp" (click)="signUp()">Register</button>
+      </div>
+    </div>
+  </div>
+</div>

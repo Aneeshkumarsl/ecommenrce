@@ -1,0 +1,84 @@
+footer {
+    background: #f3f3f3;
+    padding: 12px;
+    left: 0;
+    font-size: 14px;
+    p {
+        color: #222;
+    }
+  }
+
+  .social-media {
+    width: 100%;
+    color: #fff;
+    text-align: center;
+    font-size: 20px;
+  }
+  
+  
+  
+  .social-media i {
+    height: 25px;
+    width: 25px;
+    margin: 20px 10px;
+    padding: 4px;
+    color: #ef6c00;
+    transition: 0.5s;
+  }
+  
+  .social-media:hover i {
+    transform: scale(1.5);
+  }
+  .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background: #f3f3f3;
+    margin: 10px;
+    border-radius: 30%;
+    box-shadow: 0 5px 15px -5px #00000070;
+    color: #113c55 ;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+  }
+  .btn i {
+    line-height: 90px;
+    font-size: 26px;
+    transition: 0.2s linear;
+  }
+  .btn:hover i {
+    transform: scale(1.3);
+    color:  #f3f3f3;
+  }
+  .btn::before {
+    content: '';
+    position: absolute;
+    width: 120%;
+    height: 120%;
+    background:#ef6c00;
+    transform: rotate(45deg);
+    left: -110%;
+    top: 90%;
+  }
+  .btn:hover::before {
+    animation: flash 0.7s 1;
+    top: -10%;
+    left: -10%;
+  }
+  @keyframes flash {
+    0% {
+      left: -100%;
+      top: 90%;
+    }
+    50% {
+      left: 10%;
+      top: -30%;
+    }
+    100% {
+      left: -10%;
+      top: -10%;
+    }
+  }

@@ -1,0 +1,87 @@
+@import '../../../styles/variables.scss';
+button {
+    border: 0;
+    background: none;
+    font-size: 25px;
+    color: $darkBlueColor;
+    &:hover {
+        color: $orangeColor;
+    }
+    &:active {
+        transform: scale(0.95);
+    }
+}
+.button-bg-color{
+    color: $orangeColor;
+}
+
+.firstAlign {
+    flex-basis: 25%;
+    padding-right: 10px;
+}
+.secondAlign {
+    flex-basis: 75%;
+    padding-left: 10px;
+    .cardClass {
+        box-shadow: $cardShadow;
+        padding: 10px; 
+        margin-bottom: 10px;
+    }
+    .span-style {
+        font-weight: 600;
+        margin-right: 10px;
+    }
+    .select-class{
+        width: 200px;
+        padding: 7px 0;
+        border: 0;
+        border-bottom: 1px solid $borderColor;
+        background: none !important;
+        &:focus {
+            outline: unset;
+        }
+    }
+}
+
+@media(max-width:768px) {
+    .flex-class {
+        flex-direction: column;
+    }
+    .firstAlign {
+        padding-right: 0px;
+    }
+    .secondAlign {
+        padding-left: 0px;
+    }
+}
+
+@media (max-width:465px){
+    .card-item {
+        flex-direction: column;
+    }
+    .item-bottom {
+        margin-bottom: 10px;
+    }
+}
+
+
+
+option{
+    font-size:14px;
+    background-color:#fff;
+    font-weight: 500;
+    &:hover {
+        background-color: red !important;
+    }
+}
+
+
+.noData {
+    width: 65%;
+    @media (max-width:1000px){
+        width: 70%;
+    }
+    @media (max-width:900px){
+        width: 75%;
+    }
+}

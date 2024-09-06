@@ -1,0 +1,147 @@
+@import '../../../../styles/variables.scss';
+
+
+.card {
+    box-shadow: $cardShadow;
+    border-radius: unset !important;
+    border: unset !important;
+    padding: 1.5rem;
+    margin-left: 10px;
+    @media (max-width:768px){
+      margin-left: unset !important
+    }
+}
+.div-header {
+    display: flex;
+  }
+  .icon-div
+  {
+    width: 6rem;
+    height: 6rem;
+    border-radius: 15%;
+    border: 1.5px solid $orangeColor;
+    margin-right: 1.5rem;
+    padding:1rem;
+    i {
+        font-size: 80px;
+        color: $orangeColor;
+    }
+  }
+.order-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    h4 {
+        font-size: 18px;
+        font-weight: bolder;
+        text-transform: capitalize;
+        color: $orangeColor;
+      }
+      .margin-top {
+          margin-top: 5px;
+          h6 {
+            font-size: 14px;
+            font-weight: 500;
+            text-transform: capitalize;
+          }
+          h2 {
+            font-size: 18px;
+            font-weight: 600;
+            text-transform: capitalize;
+          }
+      }    
+}
+
+  
+  .order-track {
+    margin-top: 2rem;
+    padding: 0 1rem;
+    border-top: 1px dashed $darkBlueColor;
+    padding-top: 2.5rem;
+    display: flex;
+    flex-direction: column;
+  }
+  .order-track-step {
+    display: flex;
+    height: 5rem;
+  }
+  .order-track-step:last-child {
+    overflow: hidden;
+    height: 4rem;
+  }
+  .order-track-step:last-child .order-track-status span:last-of-type {
+    display: none;
+  }
+  .order-track-status {
+    margin-right: 1.5rem;
+    position: relative;
+  }
+  .order-track-status-dot {
+    display: block;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: $orangeColor;
+  }
+  .order-track-status-line {
+    display: block;
+    margin: 0 auto;
+    width: 2px;
+    height: 5rem;
+    background: $orangeColor;
+  }
+  .order-track-status-dot-disabled {
+  @extend .order-track-status-dot;
+    background: $borderColor;
+  }
+  .order-track-status-line-disabled {
+    @extend .order-track-status-line;
+    background: $borderColor;
+  }
+  .order-track-text-stat {
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 3px;
+  }
+
+  .order-track-text-stat-disabled {
+      @extend .order-track-text-stat;
+      color: $darkGrayColor;
+  }
+
+  .order-track-text-sub {
+    font-size: 14px;
+    font-weight: 600;
+    color: $orangeColor;
+  }
+  
+  .order-track {
+    transition: all .3s height 0.3s;
+    transform-origin: top center;
+  }
+
+  .close-button {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    border: 0;
+    background: transparent;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $orangeColor;
+    color: $whiteColor;
+    border-radius: 50%;
+    box-shadow: $buttonBoxShadow;
+    &:active {
+        transform: scale(0.95);
+    }
+    span  {
+      font-size: 15px;
+    }
+  }
+
+  

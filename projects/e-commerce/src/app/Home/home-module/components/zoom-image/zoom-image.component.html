@@ -1,0 +1,98 @@
+<div class="container my-4">
+    <div class="d-flex flex-wrap" *ngFor="let zoomItems of zoomItemView">
+        <div class="image">
+        <div class="card card-height">
+            <img [src]="zoomImage" (mousemove)="onMouseMove($event)"
+                (mouseleave)="onMouseLeave($event)" />
+        </div>
+        <div class="d-flex my-3 align-items-center justify-content-between">
+            <div (click)="selectImage(image)" class="card small-card-class" *ngFor="let image of zoomItems.images">
+                <img [src]="image">
+            </div>
+        </div>
+    </div>
+        <div class="details">
+            <div #zoomViewer fxShow="false" fxShow.gt-md *ngIf="zoomImage">
+                <div class="card" *ngIf="zoomImage" class="zoom-viewer"
+                    [ngStyle]="{'background-image': 'url(' + zoomImage + ')'}">
+                </div>
+            </div>
+            <div class="product-middle">
+                <h2 class="mb-0">{{zoomItems.section}}</h2>
+                    <p class="my-1">{{zoomItems.name}}</p>
+                    <h4 *ngIf="zoomItems.offer > 0">
+                        <del>₹{{zoomItems.actualPrice}}</del>
+                        <span>{{zoomItems.offer}}% off</span>
+                    </h4>
+                    <h3 class="price">₹ {{zoomItems.offerPrice}}</h3>
+            <div class="discription">
+                <p class="font-weight-bold">Product Details</p>
+                <p class="text-muted productDiscription mb-0 text-wrap">
+                    {{zoomItems.desc}}
+                </p>
+            </div>
+            <div class="py-1 mt-2">
+                <p class="text-center">
+                    <span class="text-muted">Availability:</span>
+                    <span class="px-1 stock">In Stock</span>
+                </p>
+
+                <div class="quantityClass d-flex flex-column">
+                    <p class="font-weight-bold text-center">Quantity</p>
+                    <div class="d-flex align-items-center justify-content-center ">
+                    <button (click)="decreament(itemCount)" [disabled]="itemCount == 1" type="button"><i class="mdi mdi-minus"></i></button>
+                    <input readonly=""  [value]="itemCount" type="text" class="mx-3">
+                    <button (click)="increament(itemCount)"  type="button"><i class="mdi mdi-plus-thick"></i></button>
+                    </div>
+                 </div>
+                 <div class="d-flex my-3 align-items-center justify-content-between">
+                    <button (click)="addToCart(zoomItems)" class="button-class">add to cart</button>
+                    <button class="button-class">buy Now</button>
+                </div>
+            </div>
+            </div>
+        </div>
+        <div class="instructions">
+            <div class="card-outer">
+                <div class="card cardClass p-3">
+                    <div class="outerClass d-flex align-items-center">
+                        <i class="mdi mdi-gift-outline"></i>
+                        <div>
+                        <p class="mb-0">BONUS PLUS</p>
+                        <span>Get a bonus plus for buying more that three products</span>
+                         </div>
+                    </div>
+                </div>
+                <div class="card cardClass p-3">
+                    <div class="outerClass d-flex align-items-center">
+                        <i class="mdi mdi-truck"></i>
+                        <div>
+                        <p class="mb-0">Free shipping</p>
+                        <span>Free shipping on all orders over ₹99</span>
+                         </div>
+                    </div>
+                </div>
+                <div class="card cardClass p-3">
+                    <div class="outerClass d-flex align-items-center">
+                        <i class="mdi mdi-currency-usd-circle"></i>
+                        <div>
+                        <p class="mb-0">MONEY BACK GUARANTEE</p>
+                        <span>100% money back guarantee</span>
+                         </div>
+                    </div>
+                </div>
+                <div class="card cardClass p-3">
+                    <div class="outerClass d-flex align-items-center">
+                        <i class="mdi mdi-progress-clock"></i>
+            <div>
+                <p class="mb-0">ONLINE SUPPORT 24/7</p>
+                <span>Call us: +91 12345 67890</span>
+                </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <app-description></app-description>
+    <app-related-items [items]= 'relatedItem'></app-related-items>
+</div>

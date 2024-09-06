@@ -1,0 +1,31 @@
+<div class="d-flex align-items-end justify-content-between mt-3">
+    <span class="span-class"> Showing 1 to {{valueNumber}} of {{totalCount}} entries</span>
+          <ul class="nav nav-pills align-items-center" *ngIf = "pages && pages.length > 0 ">
+            <li
+            class="page-item first-item">
+              <a class="nav-link iconClass"  href="javascript:void(0)" (click)="previous()"><i class="mdi mdi-chevron-left" aria-hidden="true"></i></a>
+          </li>
+          <li  class="nav-item"  *ngIf="pageNumber > 2">
+            <a  class="nav-link" href="javascript:void(0)" (click)="setPage(0)" >1</a>
+          </li>
+          <li  class="nav-item" class="disabled"  *ngIf="pageNumber > 1">
+            <a  class="nav-link dotClass" href="javascript:void(0)">....</a>
+          </li>
+            <li *ngFor="let p of pages ;let i = index" [ngStyle]="{'display': pageNumber > i+1 || i > pageNumber + 1 ? 'none' : '' }"   
+              class="nav-item" >
+              <a class="nav-link"  href="javascript:void(0)" (click)="setPage(i)" 
+              [ngClass]="{active: i === pageNumber}"
+             >{{i+1}}</a>
+            </li>
+            <li  class="nav-item"  *ngIf="(pages && pages.length -1 !== pageNumber+2) && (pages && pages.length !== pageNumber+2) && (pages && pages.length-1 !== pageNumber)" >
+              <a  class="nav-link dotClass" href="javascript:void(0)">....</a>
+            </li>
+            <li  class="nav-item"  *ngIf="(pages && pages.length -2 !== pageNumber) && (pages && pages.length !== pageNumber+1)" >
+              <a  class="nav-link" href="javascript:void(0)" (click)="setPage(pages.length-1)" >{{pages.length}}</a>
+            </li>
+            <li
+             class="page-item last-item">
+             <a class="nav-link iconClass"  href="javascript:void(0)" (click)="next()"><i class="mdi mdi-chevron-right" aria-hidden="true"></i></a>
+         </li>
+          </ul>
+</div>

@@ -1,0 +1,61 @@
+
+<div class="container my-4">
+    <div class="card p-3 my-3 d-flex align-items-center justify-content-between flex-row ">
+<div>
+    <span class="cart-span">Cart</span>
+</div>
+<div>
+    <ol class="breadcrumb v1 mb-0 p-0">
+        <li class="breadcrumb-level" routerLink="/home"><a href="javascript:void(0)">Home</a></li>
+        <li class="breadcrumb-level"><a>Cart</a></li>
+    </ol>
+</div>
+    </div>
+<div class="card p-4">
+    <div class="row">
+        <div class="col">
+          <div class="table-responsive-lg">
+              <table class="table table-bordered" >
+            <thead>
+              <tr>
+                <th scope="col">Product</th>
+                <th scope="col">Name</th>
+                <th scope="col">Price</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Total</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody *ngIf="isReady">
+              <tr *ngFor="let cart of cartDetails">
+                <td data-column="Product">
+                    <img [src]="cart.details.images[0]"/>
+                </td>
+                <td  data-column="Name">{{cart.name}}</td>
+                <td data-column="Price" class="price">₹ {{cart.details.offerPrice}}</td>
+                <td data-column="Quantity">
+                    <div class="quantityClass d-flex align-items-center justify-content-center">
+                        <div class="d-flex align-items-center justify-content-center ">
+                        <button (click)="cart.quantity = cart.quantity-1" [disabled]="cart.quantity == 1" type="button"><i class="mdi mdi-minus"></i></button>
+                        <input readonly=""  [value]="cart.quantity" type="text" class="mx-3">
+                        <button (click)="cart.quantity =cart.quantity+1"  type="button"><i class="mdi mdi-plus-thick"></i></button>
+                        </div>
+                     </div>
+                </td>
+                <td data-column="Total Items" class="itemTotal">₹ {{cart.details.offerPrice * cart.quantity}}</td>
+                <td  data-column="Action">
+                    <button type="button" (click)="clearFromCart(cart.id)" class="mx-2 button-remove "><i class="mdi mdi-delete"></i></button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        </div>
+        </div>
+
+        <div class="d-flex my-3 align-items-center justify-content-between div-column">
+            <button class="button-class"><i class="mdi mdi-cart-arrow-down mr-2"></i>continue shopping</button>
+            <button class="button-class" routerLink='/pages/check-out'>proceed to checkout<i class="mdi mdi-cart-arrow-right ml-2"></i></button>
+        </div>
+</div>
+</div>

@@ -1,0 +1,29 @@
+@import '../../../styles/variables.scss';
+.back-to-top{
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    z-index: 999999;
+    right: 20px;
+    bottom: 20px;
+    opacity: .5;
+    color:$whiteColor;
+    background-color: rgba(0,0,0,.75);
+    border-radius: 4px;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &:hover{
+        opacity: 0.9;
+    }
+
+    i {
+        font-size: 25px;
+        color: $whiteColor;
+    }
+}

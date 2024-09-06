@@ -1,0 +1,407 @@
+<div class="container my-4">
+    <div class="card p-3 my-3 d-flex align-items-center justify-content-between flex-row ">
+<div>
+    <span class="cart-span">Checkout</span>
+</div>
+<div>
+    <ol class="breadcrumb v1 mb-0 p-0">
+        <li class="breadcrumb-level" routerLink="/home"><a href="javascript:void(0)">Home</a></li>
+        <li class="breadcrumb-level"><a>Checkout</a></li>
+    </ol>
+</div>
+    </div>
+
+    <div *ngIf="isReady" class="d-flex align-items-start justify-content-between flex-wrap">
+        <div class="productDetail">
+            <div class="card p-4">
+                <div class="d-flex align-items-center pb-3" div-border>
+                    <span class="mdi-span">
+                    <i class="mdi mdi-sticker-emoji"></i>
+                </span>
+                <span class="span-class">Billing Details</span>
+            </div>
+                <div class="my-2">
+                    <div class="position-relative">
+                        <label class="ecomlabel mb-0" label-weight>Choose an address</label>
+                        <div class="d-flex align-items-center py-2" div-border-radio>
+                        <label class="mr-1" *ngIf="userData">
+                            <input type="radio" name="radio" value="home" checked (change)="onItemChange('default','billingAddress')"/>
+                            <span>Default Address</span>
+                          </label>
+                          <div class="d-flex align-items-center defalt-div" *ngIf="!userData">
+                            <button class="defalt-button" routerLink="/pages/profile" >
+                                <span class="mdi mdi-plus"></span>
+                            </button>
+                            <span>Add Default Address</span>
+                          </div>
+                          
+                          <label class="ml-1">
+                            <input type="radio" value="other" name="radio" (change)="onItemChange('other','billingAddress')"/>
+                            <span>New Address</span>
+                          </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row my-1" *ngIf="billingAddress == 'default' && userData.address">
+                    <div class="col-md-4 col-lg-4 col-xl-4 col-sm-6 col-xs-12 mb-3">
+                        <label class="viewModeLabel">Contact Name</label>
+                        <span class="viewModeValue">{{userData.address.contactName}}</span>
+                        <div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-lg-4 col-xl-4 col-sm-6 col-xs-12 mb-3">
+                        <label class="viewModeLabel">Mobile Number</label>
+                        <span class="viewModeValue">{{userData.address.contactNo}}</span>
+                        <div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-lg-4 col-xl-4 col-sm-6 col-xs-12 mb-3">
+                        <label class="viewModeLabel">Pincode</label>
+                        <span class="viewModeValue">{{userData.address.pincode}}</span>
+                        <div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-lg-4 col-xl-4 col-sm-6 col-xs-12 mb-3">
+                        <label class="viewModeLabel">Locality</label>
+                        <span class="viewModeValue">{{userData.address.locality}}</span>
+                    </div>
+                    <div class="col-md-4 col-lg-4 col-xl-4 col-sm-6 col-xs-12 mb-3">
+                        <label class="viewModeLabel">City/District/Town</label>
+                        <span class="viewModeValue">{{userData.address.city}}</span>
+                    </div>
+                    <div class="col-md-4 col-lg-4 col-xl-4 col-sm-6 col-xs-12 mb-3">
+                        <label class="viewModeLabel">State</label>
+                        <span class="viewModeValue">{{userData.address.state}}</span>
+                    </div>
+                    <div class="col-md-4 col-lg-4 col-xl-4 col-sm-6 col-xs-12 mb-3">
+                        <label class="viewModeLabel">Landmark</label>
+                        <span class="viewModeValue">{{userData.address.landmark}}</span>
+                    </div>
+                    <div class="col-md-4 col-lg-4 col-xl-4 col-sm-6 col-xs-12 mb-3">
+                        <label class="viewModeLabel">Address Type</label>
+                        <span class="viewModeValue">{{userData.address.addressType}}</span>
+                    </div>
+                    <!-- <div class="col-md-4 col-lg-4 col-xl-4 col-sm-6 col-xs-12 mb-3">
+                        <label class="viewModeLabel">Address</label>
+                        <span class="viewModeValue">9626017281</span>
+                    </div> -->
+                </div>
+                <div class="row my-1" *ngIf="billingAddress == 'other'">
+                    <form  [formGroup]="useraddEditForm">
+                        <div class="mt-4" [ngClass]="{ editMode: !viewMode, viewMode: viewMode }">
+                            <div class="row">
+                                <div class="col-md-4 col-lg-4 col-xl-4 col-sm-6 col-xs-12 mb-3">
+                                    <!-- <label class="viewModeLabel">Contact Name</label> -->
+                                    <!-- <span class="viewModeValue">{{userData.address.contactName}}</span> -->
+                                    <div class="editModeInput">
+                                        <div class="position-relative">
+                                            <input class="input ecomtextinput" type="text" placeholder=" " 
+                                            formControlName="contactName"
+                                            />
+                                            <label class="ecomlabel">Contact Name</label>
+                                        </div>
+                                    </div>
+                                    <div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-lg-4 col-xl-4 col-sm-6 col-xs-12 mb-3">
+                                    <!-- <label class="viewModeLabel">Mobile Number</label> -->
+                                    <!-- <span class="viewModeValue">{{userData.address.contactNo}}</span> -->
+                                    <div class="editModeInput">
+                                        <div class="position-relative">
+                                            <input class="input ecomtextinput" type="text" 
+                                            formControlName="contactNo"
+                                            placeholder=" "  />
+                                            <label class="ecomlabel">Mobile Number</label>
+                                        </div>
+                                    </div>
+                                    <div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-lg-4 col-xl-4 col-sm-6 col-xs-12 mb-3">
+                                    <!-- <label class="viewModeLabel">Pincode</label> -->
+                                    <!-- <span class="viewModeValue">{{userData.address.pincode}}</span> -->
+                                    <div class="editModeInput">
+                                        <div class="position-relative">
+                                            <input class="input ecomtextinput"  type="text" 
+                                            formControlName="pincode"
+                                            placeholder=" " />
+                                            <label class="ecomlabel">Pincode</label>
+                                        </div>
+                                    </div>
+                                    <div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-lg-4 col-xl-4 col-sm-6 col-xs-12 mb-3">
+                                    <!-- <label class="viewModeLabel">Locality</label> -->
+                                    <!-- <span class="viewModeValue">{{userData.address.locality}}</span> -->
+                                    <div class="editModeInput">
+                                        <div class="position-relative">
+                                            <input class="input ecomtextinput" type="text" 
+                                            formControlName="locality"
+                                            placeholder=" " />
+                                            <label class="ecomlabel">Locality</label>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div></div>
+                                    </div>
+                                </div>
+                                <!-- <div class="col-md-4 col-lg-4 col-xl-4 col-sm-6 col-xs-12 mb-3">
+                                    <label class="viewModeLabel">Address</label>
+                                    <span class="viewModeValue">9626017281</span>
+                                    <div class="editModeInput">
+                                        <div class="position-relative">
+                                            <textarea class="input ecomtextArea" rows="4" cols="10" placeholder=" "></textarea>
+                                            <label class="ecomlabel">Address</label>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div></div>
+                                    </div>
+                                </div> -->
+                                <div class="col-md-4 col-lg-4 col-xl-4 col-sm-6 col-xs-12 mb-3">
+                                    <!-- <label class="viewModeLabel">City/District/Town</label> -->
+                                    <!-- <span class="viewModeValue">{{userData.address.city}}</span> -->
+                                    <div class="editModeInput">
+                                        <div class="position-relative">
+                                            <input class="input ecomtextinput" type="text" 
+                                            formControlName="city"
+                                            placeholder=" " />
+                                            <label class="ecomlabel">City/District/Town</label>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-lg-4 col-xl-4 col-sm-6 col-xs-12 mb-3">
+                                    <!-- <label class="viewModeLabel">State</label> -->
+                                    <!-- <span class="viewModeValue">{{userData.address.state}}</span> -->
+                                    <div class="editModeInput">
+                                        <div class="position-relative">
+                                            <input class="input ecomtextinput" type="text" 
+                                            formControlName="state"
+                                            placeholder=" " />
+                                            <label class="ecomlabel">State</label>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-lg-4 col-xl-4 col-sm-6 col-xs-12 mb-3">
+                                    <!-- <label class="viewModeLabel">Landmark</label> -->
+                                    <!-- <span class="viewModeValue">{{userData.address.landmark}}</span> -->
+                                    <div class="editModeInput">
+                                        <div class="position-relative">
+                                            <input class="input ecomtextinput" 
+                                            formControlName="landmark"
+                                            type="text" placeholder=" " />
+                                            <label class="ecomlabel">Landmark(optional)</label>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-lg-4 col-xl-4 col-sm-6 col-xs-12 mb-3">
+                                    <!-- <label class="viewModeLabel">Address Type</label> -->
+                                    <!-- <span class="viewModeValue">{{userData.address.addressType}}</span> -->
+                                    <div class="editModeInput">
+                                        <div class="position-relative">
+                                            <label class="ecomlabel">Address Type</label>
+                                            <div class="d-flex align-items-center">
+                                            <label class="mr-1">
+                                                <input type="radio" name="radio"  [checked]="isHomeAddType" (change)="onItemChange('home','addressType')"/>
+                                                <span>Home</span>
+                                              </label>
+                                              <label class="ml-1">
+                                                <input type="radio" name="radio" [checked]="!isHomeAddType" (change)="onItemChange('office','addressType')" />
+                                                <span>Office</span>
+                                              </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <!-- <form [formGroup]="useraddEditForm">
+ 
+                    <div class="col-md-6 col-lg-6 col-xl-6 col-sm-6 col-xs-12 mb-3">
+                        <div class="editModeInput">
+                            <div class="position-relative">
+                                <input class="input ecomtextinput" type="text" placeholder=" " />
+                                <label class="ecomlabel">Name</label>
+                            </div>
+                        </div>
+                        <div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-6 col-sm-6 col-xs-12 mb-3">
+                        <div class="editModeInput">
+                            <div class="position-relative">
+                                <input class="input ecomtextinput" type="text" placeholder=" "  />
+                                <label class="ecomlabel">Mobile Number</label>
+                            </div>
+                        </div>
+                        <div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-6 col-sm-6 col-xs-12 mb-3">
+                        <div class="editModeInput">
+                            <div class="position-relative">
+                                <input class="input ecomtextinput"  type="text" placeholder=" " />
+                                <label class="ecomlabel">Pincode</label>
+                            </div>
+                        </div>
+                        <div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-6 col-sm-6 col-xs-12 mb-3">
+                        <div class="editModeInput">
+                            <div class="position-relative">
+                                <input class="input ecomtextinput" type="text" placeholder=" " />
+                                <label class="ecomlabel">Locality</label>
+                            </div>
+                        </div>
+                        <div>
+                            <div></div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-6 col-sm-6 col-xs-12 mb-3">
+                        <div class="editModeInput">
+                            <div class="position-relative">
+                                <input class="input ecomtextinput" type="text" placeholder=" " />
+                                <label class="ecomlabel">City/District/Town</label>
+                            </div>
+                        </div>
+                        <div>
+                            <div></div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-6 col-sm-6 col-xs-12 mb-3">
+                        <div class="editModeInput">
+                            <div class="position-relative">
+                                <input class="input ecomtextinput" type="text" placeholder=" " />
+                                <label class="ecomlabel">State</label>
+                            </div>
+                        </div>
+                        <div>
+                            <div></div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-6 col-sm-6 col-xs-12 mb-3">
+                        <div class="editModeInput">
+                            <div class="position-relative">
+                                <input class="input ecomtextinput" type="text" placeholder=" " />
+                                <label class="ecomlabel">Landmark(optional)</label>
+                            </div>
+                        </div>
+                        <div>
+                            <div></div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-6 col-sm-6 col-xs-12 mb-3">
+                        <div class="editModeInput">
+                            <div class="position-relative">
+                                <label class="ecomlabel">Address Type</label>
+                                <div class="d-flex align-items-center">
+                                <label class="mr-1">
+                                    <input type="radio" name="radio"/>
+                                    <span>Home</span>
+                                  </label>
+                                  <label class="ml-1">
+                                    <input type="radio" name="radio"/>
+                                    <span>Office</span>
+                                  </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div></div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-6 col-xl-6 col-sm-6 col-xs-12 mb-3">
+                        <div class="editModeInput">
+                            <div class="position-relative">
+                                <textarea class="input ecomtextArea" rows="4" cols="10" placeholder=" "></textarea>
+                                <label class="ecomlabel">Address</label>
+                            </div>
+                        </div>
+                        <div>
+                            <div></div>
+                        </div>
+                    </div>
+                </form> -->
+                </div>
+                <div class="d-flex align-items-center py-3" div-border>
+                    <span class="mdi-span pricing">
+                    <i class="mdi mdi-cash-marker"></i>
+                </span>
+                <span class="span-class">Payment options</span>
+            </div>
+            <div class="d-flex flex-column py-2">
+                <label>
+                    <input type="radio" name="radio1" value="cashOnDelivery" checked />
+                    <span>Cash On Delivery</span>
+                  </label>
+                  <label>
+                    <input type="radio" name="radio1" value="Banking"  />
+                    <span>Banking</span>
+                  </label>
+                </div>
+            </div>
+        </div>
+        <div class="productItem">
+            <div class="card p-4">
+                <div class="d-flex align-items-center pb-3" div-border>
+                    <span class="mdi-span">
+                    <i class="mdi mdi-cart"></i>
+                </span>
+                <span class="span-class">Product Details</span>
+
+            </div>
+
+                <div class=" d-flex align-items-center item-div py-3">
+                <span class="product">Product</span>
+                <span  class="total">Total</span>
+            </div>
+            <ul class="list-unstyled mb-0">
+                <li class="d-flex align-items-center py-2" *ngFor="let cart of cartDetails">
+                    <div class="d-flex align-items-center prodName">
+                        <div>
+                        <img src="{{cart.details.images[0]}}"/>
+                    </div>
+                        <span>{{cart.name}} × {{cart.quantity}}</span>
+
+                    </div>
+                    <span class="totalValue">₹ {{cart.details.offerPrice * cart.quantity }}</span>
+                </li>
+                <!-- <li class="d-flex align-items-center py-3">
+                    <div class="d-flex align-items-center prodName">
+                        <img src="../../../../assets/images/productImage/pista1.jpeg"/>
+                        <span>Walnut × 1</span>
+
+                    </div>
+                    <span class="totalValue">2000</span>
+                </li> -->
+            </ul>
+            <div class=" d-flex align-items-center item-div solidBorder py-3">
+                <span class="product">Amount Payable</span>
+                <span  class="total totalAmount">₹ {{totalAmount}}</span>
+            </div>
+            <div class="d-flex mt-2 align-items-center justify-content-end ">
+                <button class="button-class" (click)="placeOrder()" >Place Order<i class="mdi mdi-cart-arrow-right ml-2"></i></button>
+
+            </div>
+            </div>
+        </div>
+    </div>
+
+    </div>

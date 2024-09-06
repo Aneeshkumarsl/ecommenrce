@@ -1,0 +1,16 @@
+<div id="topbar" class="d-flex align-items-center">
+  <div class="container container-class">
+    <div class="contact-info d-flex align-items-center justify-content-between">
+      <ul>
+        <li class="d-flex align-items-center"><i class="mdi mdi-headphones"></i> Support +91 12345 67890</li>
+      </ul>
+      <ul>
+        <li class="d-flex align-items-center" routerLink="/login"  *ngIf="!userInfo.isLoggedIn"><i class="mdi mdi-account"></i> Login / Register</li>
+        <li class="d-flex align-items-center"  *ngIf="userInfo.isLoggedIn"><i class="mdi mdi-account"></i> {{userInfo.name}}</li>
+      </ul>
+    </div>
+  </div>
+</div>
+<app-search-nav></app-search-nav>
+<app-product-nav></app-product-nav>
+

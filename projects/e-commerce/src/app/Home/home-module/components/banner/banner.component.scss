@@ -1,0 +1,402 @@
+  @import '../../../../styles/variables.scss';
+  .column {
+  .first-column {
+    flex-basis: 40%;
+    padding-right: 4px;
+    .first-image {
+        flex-basis: 100%;
+        img {
+            margin-top: 8px;
+            vertical-align: middle;
+            height: 374px;
+            width: 100%;
+            filter: grayscale(0.1) brightness(0.5);
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s linear;
+            &:hover {
+                filter: grayscale(0);
+              }
+        }
+
+        .image-title {
+            top: 30%;
+            left: 5%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            h3 {
+                color: $whiteColor;
+                font-size: 24px;
+                font-weight: 700;
+                text-transform: capitalize;
+            }
+            span  {
+                color: $whiteColor;
+                font-size: 16px;
+                font-weight: 700;
+                text-transform: capitalize; 
+                margin-bottom: 10px; 
+            }
+            button {
+                background: $orangeColor;
+        border: 0px;
+        font-size: 14px;
+        font-weight: 700;
+        margin: 5px 0;
+        display: inline-block;
+        border-radius: 4px;
+        color: $whiteColor;
+        padding: 11px 27px;
+        text-transform: uppercase;
+        box-shadow: $vertiButtonShadow;
+        &:active {
+            transform: scale(0.95);
+        }
+            }
+        }
+    }
+    .inner {
+        flex-basis: 100%;
+    .second-image {
+        flex-basis: 50%;
+        padding-right: 4px;
+        img {
+            margin-top: 8px;
+            vertical-align: middle;
+            height: 306px;
+            width: 100%;
+            filter: grayscale(0.1) brightness(0.5);
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s linear;
+            &:hover {
+                filter: grayscale(0);
+              }
+        }
+        .image-title {
+            top: 50%;
+            left: 5%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            bottom: 0px;
+            h3 {
+                color: $whiteColor;
+                font-size: 24px;
+                font-weight: 700;
+                text-transform: capitalize;
+            }
+            span  {
+                color: $whiteColor;
+                font-size: 16px;
+                font-weight: 700;
+                text-transform: capitalize; 
+                margin-bottom: 10px; 
+            }
+            button {
+                background: $orangeColor;
+        border: 0px;
+        font-size: 14px;
+        font-weight: 700;
+        margin: 5px 0;
+        display: inline-block;
+        border-radius: 4px;
+        color: $whiteColor;
+        padding: 11px 27px;
+        text-transform: uppercase;
+        box-shadow: $vertiButtonShadow;
+        &:active {
+            transform: scale(0.95);
+        }
+            }
+        }
+    }
+    .third-image {
+        flex-basis: 50%;
+        padding-left: 4px;
+        img {
+            margin-top: 8px;
+            vertical-align: middle;
+            height: 306px;
+            width: 100%;
+            filter: grayscale(0.1) brightness(0.5);
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s linear;
+            &:hover {
+                filter: grayscale(0);
+              }
+        }
+        .image-title {
+            top: 50%;
+            right: 5%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            bottom: 0px;
+            h3 {
+                color: $whiteColor;
+                font-size: 24px;
+                font-weight: 700;
+                text-transform: capitalize;
+            }
+            span  {
+                color: $whiteColor;
+                font-size: 16px;
+                font-weight: 700;
+                text-transform: capitalize; 
+                margin-bottom: 10px; 
+            }
+            button {
+                background: $orangeColor;
+        border: 0px;
+        font-size: 14px;
+        font-weight: 700;
+        margin: 5px 0;
+        display: inline-block;
+        border-radius: 4px;
+        color: $whiteColor;
+        padding: 11px 27px;
+        text-transform: uppercase;
+        box-shadow: $vertiButtonShadow;
+        &:active {
+            transform: scale(0.95);
+        }
+            }
+        }
+    }
+}
+  }
+   .second-column {
+    flex-basis: 60%;
+    padding-left: 4px;
+    .first-image {
+        flex-basis: 100%;
+        img {
+            margin-top: 8px;
+            vertical-align: middle;
+            height: 430px;
+            width: 100%;
+            filter: grayscale(0.1) brightness(0.5);
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s linear;
+            &:hover {
+                filter: grayscale(0);
+              }
+        }
+        .image-title {
+            top: 30%;
+            right: 5%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            h3 {
+                color: $whiteColor;
+                font-size: 24px;
+                font-weight: 700;
+                text-transform: capitalize;
+            }
+            span  {
+                color: $whiteColor;
+                font-size: 16px;
+                font-weight: 700;
+                text-transform: capitalize; 
+                margin-bottom: 10px; 
+            }
+            button {
+                background: $orangeColor;
+        border: 0px;
+        font-size: 14px;
+        font-weight: 700;
+        margin: 5px 0;
+        display: inline-block;
+        border-radius: 4px;
+        color: $whiteColor;
+        padding: 11px 27px;
+        text-transform: uppercase;
+        box-shadow: $vertiButtonShadow;
+        &:active {
+            transform: scale(0.95);
+        }
+            }
+        }
+    }
+    .inner {
+        flex-basis: 100%;
+    .second-image {
+        flex-basis: 50%;
+        padding-right: 4px;
+        img {
+            margin-top: 8px;
+    vertical-align: middle;
+    height: 250px;
+    width: 100%;
+    filter: grayscale(0.1) brightness(0.5);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s linear;
+    &:hover {
+        filter: grayscale(0);
+      }
+        }
+        .image-title {
+            top: 50%;
+            left: 5%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            bottom: 0px;
+            h3 {
+                color: $whiteColor;
+                font-size: 24px;
+                font-weight: 700;
+                text-transform: capitalize;
+            }
+            span  {
+                color: $whiteColor;
+                font-size: 16px;
+                font-weight: 700;
+                text-transform: capitalize; 
+                margin-bottom: 10px; 
+            }
+            button {
+                background: $orangeColor;
+        border: 0px;
+        font-size: 14px;
+        font-weight: 700;
+        margin: 5px 0;
+        display: inline-block;
+        border-radius: 4px;
+        color: $whiteColor;
+        padding: 11px 27px;
+        text-transform: uppercase;
+        box-shadow: $vertiButtonShadow;
+        &:active {
+            transform: scale(0.95);
+        }
+            }
+        }
+    }
+    .third-image {
+        flex-basis: 50%;
+        padding-left: 4px;
+        img {
+            margin-top: 8px;
+    vertical-align: middle;
+    height: 250px;
+    width: 100%;
+    filter: grayscale(0.1) brightness(0.5);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s linear;
+    &:hover {
+        filter: grayscale(0);
+      }
+        }
+        .image-title {
+            top: 50%;
+            right: 5%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            bottom: 0px;
+            h3 {
+                color: $whiteColor;
+                font-size: 24px;
+                font-weight: 700;
+                text-transform: capitalize;
+            }
+            span  {
+                color: $whiteColor;
+                font-size: 15px;
+                font-weight: 700;
+                text-transform: capitalize; 
+                margin-bottom: 10px; 
+            }
+            button {
+                background: $orangeColor;
+        border: 0px;
+        font-size: 14px;
+        font-weight: 700;
+        margin: 5px 0;
+        display: inline-block;
+        border-radius: 4px;
+        color: $whiteColor;
+        padding: 11px 27px;
+        text-transform: uppercase;
+        box-shadow: $vertiButtonShadow;
+        &:active {
+            transform: scale(0.95);
+        }
+            }
+        }
+    }
+}
+  }
+}
+
+  
+  @media screen and (max-width: 700px) {
+    .first-column,.second-column {
+      flex: 100%;
+      max-width: 100%;
+    }
+    .column img {
+      filter: grayscale(0) brightness(1);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .column-direction {
+        flex-direction: column;
+    }
+    .column {
+    .second-column {
+        padding-left: 0;
+    }
+    .first-column {
+        padding-right: 0;
+    }
+}
+  }
+
+  @media (max-width: 400px) {
+    .first-column,.second-column {
+        .first-image {
+            .image-title {
+                top: 50% !important;
+                left: 25px !important;
+                bottom: 50% !important;
+                right: 25px !important;
+            }
+        }
+        .inner {
+        .second-image {
+            .image-title {
+                top: 50% !important;
+                left: 2px !important;
+                bottom: 50% !important;
+                right: 2px !important;
+            }
+        }
+        .third-image {
+            .image-title {
+                top: 50% !important;
+                left: 2px !important;
+                bottom: 50% !important;
+                right: 2px !important;
+               
+            }
+        }
+    }
+      }
+
+  }

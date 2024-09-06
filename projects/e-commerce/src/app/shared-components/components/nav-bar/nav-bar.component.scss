@@ -1,0 +1,53 @@
+  @import '../../../styles/variables.scss';
+
+  #topbar {
+    height: 50px;
+    font-size: 14px;
+    transition: all 0.5s;
+    overflow: hidden;
+    color: $navColor;
+    background: $blackColor;
+    padding: 25px;
+  }
+  
+  #topbar.topbar-scrolled {
+    top: -60px;
+  }
+  
+  #topbar .contact-info ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  
+  #topbar .contact-info li {
+    display: inline-block;
+    padding: 0;
+    cursor: pointer;
+  }
+  
+  #topbar .contact-info li + li {
+    margin-left: 18px;
+  }
+  
+  #topbar .contact-info a {
+    color: $navColor;
+    transition: 0.3s;
+  }
+  
+  #topbar .contact-info i {
+    // color: #f6b024;
+    color: $orangeColor;
+    padding-right: 10px;
+    font-size: 20px;
+  }
+  
+  @media (max-width:450px){
+    .container-class {
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+    #topbar {
+      font-size: 13px;
+    }
+  }

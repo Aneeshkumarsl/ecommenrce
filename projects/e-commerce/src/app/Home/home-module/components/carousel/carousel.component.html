@@ -1,0 +1,19 @@
+<ngb-carousel #carousel [interval]="3000" [pauseOnHover]="pauseOnHover" [pauseOnFocus]="pauseOnFocus" (slide)="onSlide($event)">
+    <ng-template ngbSlide *ngFor="let img of images; index as i">
+      <div class="carousel-caption p-lg-5 p-sm-4 p-3">
+        <h3 class="h3-class" style.color ="white !important" >{{img.offerSubject}}</h3>
+        <h4 class="h4-class">{{img.offerVal}}</h4>
+        <button class="button-class">Shop Now</button>
+      </div>
+      <a href="javascript:void(0)" rel="nofollow noopener noreferrer">
+        <div class="picsum-img-wrapper">
+          <img src="./assets/images/{{img.image}}" alt="carouselImage" class="img-class">
+        </div>
+      </a>
+    </ng-template>
+  </ngb-carousel>
+  <app-instuctions></app-instuctions>
+  <app-deal-day></app-deal-day>
+  <app-banner></app-banner>
+  <app-product-tab></app-product-tab>
+  

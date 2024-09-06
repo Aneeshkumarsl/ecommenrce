@@ -1,0 +1,37 @@
+<section class="card">
+    <div class="d-flex align-items-center">
+      <div class="icon-div d-flex align-items-center justify-content-center">
+          <i class="mdi mdi-truck-fast"></i>
+      </div>
+      <div class="order-details">
+        <h4 class="mb-0">Tracking Details</h4>
+        <div class="margin-top">
+        <h6 class="mb-0">Order Number</h6>
+        <h2 class="mb-0">#A61452B</h2>
+    </div>
+      </div>
+      <button class="close-button" (click)="trackClose()"><span class="mdi mdi-close"></span></button>
+    </div>
+    <div class="order-track" >
+      <div class="order-track-step" *ngFor="let order of orderDetails ">
+        <div class="order-track-status">
+          <span  
+          [class.order-track-status-dot]="order.status !== 'Order Shipping'|| order.status !== 'Order Delivering will soon' "
+          [class.order-track-status-dot-disabled]="order.status === 'Order Shipping'|| order.status === 'Order Delivering will soon' "
+          ></span>
+          <span 
+          [class.order-track-status-line]="order.status !== 'Order Shipping'|| order.status !== 'Order Delivering will soon' "
+          [class.order-track-status-line-disabled]="order.status === 'Order Shipping'|| order.status === 'Order Delivering will soon' "
+          ></span>
+        </div>
+        <div class="order-track-text">
+          <p 
+          [class.order-track-text-stat]="order.status !== 'Order Shipping'|| order.status !== 'Order Delivering will soon' "
+          [class.order-track-text-stat-disabled]="order.status === 'Order Shipping'|| order.status === 'Order Delivering will soon' "
+          
+          >{{order.status}}</p>
+          <span class="order-track-text-sub">{{order.date | date}}</span>
+        </div>
+      </div>
+    </div>
+  </section>

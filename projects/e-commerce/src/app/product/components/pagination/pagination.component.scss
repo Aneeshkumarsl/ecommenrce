@@ -1,0 +1,52 @@
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    color: #fff !important;
+    background-color: #ef6c00;
+    border: 1px solid #ed6a00;
+  
+  }
+  .nav-pills .nav-link {
+    margin-left: 7px;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0!important;
+    background: #113c55;
+    color: #fff;
+  }
+  .iconClass {
+    border: unset !important;
+    font-size: 25px;
+    padding-left: 3px;
+    text-align: center;
+    padding-right: 3px;
+  }
+  
+  ul {
+    float: right;
+    @media(max-width: 767px) {
+      justify-content: center;
+      float: none;
+  }
+  }
+  
+  .dotClass {
+    border: 0 !important;
+    padding: 0px;
+    position: relative;
+  }
+  
+  .spanClass {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    @media(max-width: 767px) {
+      text-align: center;
+  }
+    
+  }
+  
+  .span-class {
+    font-size: 13px;
+    font-weight: 600;
+  }

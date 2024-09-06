@@ -1,0 +1,272 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+@import '../src/app/styles/variables.scss';
+html, body { height: 100%; }
+
+@font-face {
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 400;
+    src: url('./assets/fonts/quicksand-v21-latin-regular.eot'); /* IE9 Compat Modes */
+    src: url('./assets/fonts/quicksand-v21-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('./assets/fonts/quicksand-v21-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+         url('./assets/fonts/quicksand-v21-latin-regular.woff') format('woff'), /* Modern Browsers */
+         url('./assets/fonts/quicksand-v21-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('./assets/fonts/quicksand-v21-latin-regular.svg#Quicksand') format('svg'); /* Legacy iOS */
+  }
+  /* quicksand-500 - latin */
+  @font-face {
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 500;
+    src: url('./assets/fonts/quicksand-v21-latin-500.eot'); /* IE9 Compat Modes */
+    src: url('./assets/fonts/quicksand-v21-latin-500.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('./assets/fonts/quicksand-v21-latin-500.woff2') format('woff2'), /* Super Modern Browsers */
+         url('./assets/fonts/quicksand-v21-latin-500.woff') format('woff'), /* Modern Browsers */
+         url('./assets/fonts/quicksand-v21-latin-500.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('./assets/fonts/quicksand-v21-latin-500.svg#Quicksand') format('svg'); /* Legacy iOS */
+  }
+  /* quicksand-600 - latin */
+  @font-face {
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 600;
+    src: url('./assets/fonts/quicksand-v21-latin-600.eot'); /* IE9 Compat Modes */
+    src: url('./assets/fonts/quicksand-v21-latin-600.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('./assets/fonts/quicksand-v21-latin-600.woff2') format('woff2'), /* Super Modern Browsers */
+         url('./assets/fonts/quicksand-v21-latin-600.woff') format('woff'), /* Modern Browsers */
+         url('./assets/fonts/quicksand-v21-latin-600.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('./assets/fonts/quicksand-v21-latin-600.svg#Quicksand') format('svg'); /* Legacy iOS */
+  }
+  /* quicksand-700 - latin */
+  @font-face {
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 700;
+    src: url('./assets/fonts/quicksand-v21-latin-700.eot'); /* IE9 Compat Modes */
+    src: url('./assets/fonts/quicksand-v21-latin-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('./assets/fonts/quicksand-v21-latin-700.woff2') format('woff2'), /* Super Modern Browsers */
+         url('./assets/fonts/quicksand-v21-latin-700.woff') format('woff'), /* Modern Browsers */
+         url('./assets/fonts/quicksand-v21-latin-700.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('./assets/fonts/quicksand-v21-latin-700.svg#Quicksand') format('svg'); /* Legacy iOS */
+  }
+
+  body { 
+       margin: 0; 
+       font: 500 14px 'Quicksand',sans-serif !important; 
+       color: #113c55 !important;
+       &::-webkit-scrollbar {
+          width: 8px;
+      }
+      &::-webkit-scrollbar-track {
+          background: #f1f1f1;
+      }
+      &::-webkit-scrollbar-thumb {
+          background: #cccccc;
+      }
+      &::-webkit-scrollbar-thumb:hover {
+          background: #999999;
+      }
+     }
+
+button {
+     &:focus {
+          outline: none !important;
+     }
+}
+
+.carousel-indicators li {
+background-color: #ef6c00;
+}
+.carousel-control-next-icon, .carousel-control-prev-icon {
+     filter: invert(30%) sepia(22%) saturate(7497%) hue-rotate(356deg) brightness(75%) contrast(170%);
+}
+
+.carousel:focus {
+     outline: none;
+}
+@media (min-width: 768px) {
+     .container {
+        max-width: 1000px;
+    }
+    }
+@media (min-width: 1200px){
+     .container {
+          max-width: 1300px;
+     }
+}
+
+.swiper-button-next, .swiper-button-prev {
+     align-items: center;
+     color: var(--swiper-navigation-color,var(--swiper-theme-color));
+     cursor: pointer;
+     display: flex;
+     height: var(--swiper-navigation-size);
+     justify-content: center;
+     margin-top: calc(-1*var(--swiper-navigation-size)/2);
+     position: absolute;
+     top: 50%;
+     width: calc(var(--swiper-navigation-size)/44*27);
+     z-index: 10;
+     background: #ef6c00;
+     border-radius: 50%;
+     padding: 0 22px;
+     box-shadow: beige;
+     box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);
+ }
+
+ .swiper-button-next:after {
+     font-family: 'Material Design Icons' !important;
+     content: '\F0142' !important;
+     font-variant: normal;
+     letter-spacing: 0;
+     line-height: 1;
+     text-transform: none!important;
+     text-transform: none;
+     font-size: 21px !important;
+     color: #fff;
+     font-weight: bolder;
+ }
+ .swiper-button-prev:after {
+     font-family: 'Material Design Icons' !important;
+     content: '\F0141' !important;
+     font-variant: normal;
+     letter-spacing: 0;
+     line-height: 1;
+     text-transform: none!important;
+     text-transform: none;
+     font-size: 21px !important;
+     color: #fff;
+     font-weight: bolder;
+ }
+
+ .deal {
+ .swiper-container {
+     height: auto !important;
+     }
+}
+
+.dropdown-toggle::after{
+     display: none;
+}
+
+.pointer  {
+     cursor: pointer;
+}
+
+.carousel-control-prev, .carousel-control-next {
+     z-index: 0 !important;
+}
+
+*[ng-reflect-router-link]:focus {
+     outline: none;
+   }
+
+   .ngx-slider .ngx-slider-pointer {
+        background-color: $orangeColor !important;
+        height: 25px !important;
+        width: 25px !important;
+        &:focus {
+             outline: none !important;
+        }
+   }
+   .ngx-slider .ngx-slider-selection {
+     background-color: $orangeColor !important;
+ 
+   }
+   .ngx-slider .ngx-slider-pointer:after {
+     background-color: $whiteColor !important;
+     top: 9px !important;
+    left: 9px !important;
+   }
+   .ngx-slider .ngx-slider-bar-wrapper {
+     margin-top: -18px !important;
+   }
+
+   .ngx-slider .ngx-slider-bubble {
+     bottom: 26px !important;
+     color: unset !important;
+     font-size: 12px !important;
+ }
+
+ .modal-dialog{
+     margin: 2.75rem auto !important;
+     width: 80% !important;
+ }
+
+.toast-body{
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     min-width: 300px;
+     background: $orangeColor;
+     border-radius: 3px;
+     .span-class {
+     font-weight: bolder;
+     min-height: 70px;
+     background: $orangeColor;
+     color: $whiteColor;
+     border-radius: 4px;
+     word-break: break-all;
+     flex-basis: 89%;
+     display: flex;
+     align-items: center;
+     justify-content: center;     }
+     .mdi-style-class{
+          flex-basis: 19%;
+          display: flex;
+     align-items: center;
+     justify-content: center;   
+          span {
+               width: 25px;
+               height: 25px;
+               display: flex;
+               align-items: center;
+               justify-content: center;
+               background: $darkBlueColor;
+               border-radius: 50%;
+               color: $whiteColor;
+               cursor: pointer;
+               }
+
+     }
+
+}
+
+.text-wrap {
+     word-break: break-all;
+}
+
+input:disabled {
+     cursor: not-allowed;
+}
+
+// select { 
+//      display: block;
+//      // padding: 10px 70px 10px 13px !important; 
+//      max-width: 100%; 
+//      height: auto !important; 
+//      border: 1px solid #e3e3e3; 
+//      border-radius: 3px; 
+//      background: url("https://i.ibb.co/b7xjLrB/selectbox-arrow.png") right center no-repeat; 
+//      background-color: #fff; 
+//      color: #444444; 
+//      font-size: 12px; 
+//      line-height: 16px !important; 
+//      appearance: none; 
+//      /* this is must */ -webkit-appearance: none; 
+//      -moz-appearance: none; 
+//  } 
+//  /* body select.select_box option */ 
+// //  body select option { 
+// //      padding: 0 14px; 
+// //  } 
+//  /* for IE and Edge */ 
+//  select::-ms-expand { 
+//      display: none; 
+//  } 
+//  select:disabled::-ms-expand { 
+//      background: #f60; 
+//  }

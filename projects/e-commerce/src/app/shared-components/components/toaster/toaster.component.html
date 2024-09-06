@@ -1,0 +1,11 @@
+  <ngb-toast
+      *ngFor="let toast of toastService.toasts"
+      [class]="toast.classname"
+      [autohide]="true"
+      [delay]="toast.delay || 5000"
+    >
+      <span class="span-class" #text>{{ toast.textOrTpl }}</span>
+      <div class="mdi-style-class">
+        <span class="mdi mdi-close-thick" (click)="toastService.remove(toast)"></span>
+      </div>
+    </ngb-toast>

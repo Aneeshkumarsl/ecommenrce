@@ -1,0 +1,280 @@
+@import '../../../styles/variables.scss';
+
+.app-modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1040;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
+    z-index: 1050;
+    &.show {
+        opacity: 0.5;
+    }
+}
+
+.app-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1050;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    outline: 0;
+    &.show {
+        display: block;
+    }
+}
+
+.app-modal-dialog {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow-y: auto;
+  min-height: 100vh;
+
+  .app-modal-content {
+
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        width: 71%;
+        max-width: 800px;
+        margin: auto;
+        pointer-events: auto;
+        background-color: #fff;
+        background-clip: padding-box;
+        border-radius: 8px;
+        outline: 0;
+        -webkit-animation-name: animatetop;
+        -webkit-animation-duration: 0.4s;
+        animation-name: animatetop;
+        animation-duration: 0.4s;
+        box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.25);
+
+        @media (max-width:833px){
+            width: 85%;
+            max-height: 88vh;
+        }
+        @media (max-width:690px){
+            width: 92%;
+            max-height: 88vh;
+        }
+        .modal-header {
+            text-transform: capitalize;
+            &.app-modal-header {
+                border-bottom: 0;
+                padding: 1.74rem 1.5rem 1rem;
+                display: flex;
+                align-items: baseline;
+                justify-content: space-between;
+                .app-modal-title {
+                    font-size: 20px;
+                    font-weight: 700;
+                }
+            }
+        }
+
+        .app-modal-close {
+            -webkit-appearance: none;
+            font-size: 20px;
+            border: 0;
+            background: 0;
+            opacity: 1;
+            &:hover {
+                opacity: 1;
+            }
+        }
+
+        .modal-body {
+            padding: 0 1.5rem;
+            overflow-y: auto;
+            max-height: 29rem;
+            label {
+                text-transform: capitalize;
+            }
+        }
+        .modal-body::-webkit-scrollbar {
+            width: 8px;
+        }
+        .modal-body::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        .modal-body::-webkit-scrollbar-thumb {
+            background: #cccccc;
+        }
+        .modal-body::-webkit-scrollbar-thumb:hover {
+            background: #999999;
+        }
+        .modal-footer {
+            &.app-modal-footer {
+                border-top: 0;
+                padding: 0.75rem 1.3rem 1.6rem;
+            }
+        }
+
+
+  }
+
+}
+
+@-webkit-keyframes animatetop{
+    from {
+        top:-3000px;
+        opacity: 0;
+    }
+    to {
+        top: 0;
+        opacity: 1;
+    }
+}
+
+@keyframes animatetop{
+    from {
+        top:-3000px;
+        opacity: 0;
+    }
+    to {
+        top: 0;
+        opacity: 1;
+    }
+}
+
+.close {
+    position: absolute;
+    right: -0.5rem;
+    top: -0.5rem;
+    font-size: 0.875rem;
+    font-weight: 300;
+    border-radius: 100%;
+    background-color: $orangeColor !important;
+    z-index: 4;
+    color: #fff;
+    line-height: -12rem;
+    cursor: pointer;
+    text-decoration: none;
+    display: flex;
+    align-items: safe;
+    justify-content: center;
+    align-items: center;
+    &:hover{
+     
+  background: $orangeColor !important;
+  color: #fff;
+  -webkit-transform: rotate(360deg) scale(1.10);
+  -moz-transform: rotate(360deg) scale(1.10);
+  -ms-transform: rotate(360deg) scale(1.10);
+  -o-transform: rotate(360deg) scale(1.10);
+  transform: rotate(360deg) scale(1.10);
+  -webkit-transition: -webkit-transform 600ms;
+  -moz-transition: -moz-transform 600ms;
+  -ms-transition: -ms-transform 600ms;
+  -o-transition: -o-transform 600ms;
+  transition: transform 600ms;
+    }
+  }
+
+  .imageClass {
+      flex: 1 50%;
+      padding: 30px 0 10px 0;
+      img {
+      max-width: 200px;
+      }
+      h2 {
+        font-size: 30px;
+        text-transform: capitalize;
+        line-height: 1;
+        letter-spacing: .02em;
+        font-weight: bold;
+      }
+      h4 {
+        font-size: 18px;
+        text-transform: capitalize;
+        line-height: 1;
+        font-weight: 600;
+        del {
+            color: #777;
+            font-size: 18px;
+        }
+        span {
+            padding-left: 5px;
+            color:  $orangeColor !important;
+            font-size: 25px;
+        }
+      }
+      .price{
+        font-size: 26px;
+        font-weight: 600;
+        margin: 10px 0;
+      }
+      .discription {
+        padding-top: 15px;
+        padding-bottom: 20px;
+        border-top: 1px dashed #ddd;
+        border-bottom: 1px dashed #ddd;
+        .productDiscription {
+            line-height: 24px;
+            margin-top: 5px;
+            color: #777 !important;
+        }
+      }
+      .stock {
+        color: #ef6c00;
+        font-size: 14px;
+        font-weight: 600;
+      }
+      .quantityClass {
+          input {
+            width: 50px;
+            height: 40px;
+            border: 2px solid $yellowColor;
+            border-radius: 4px;
+            text-align: center;
+            background: $yellowColor;
+            font-weight: bold;
+            font-size: 17px;
+            :focus {
+                outline: none;
+            }
+          }
+          button{
+            height: 40px;
+            width: 40px;
+            border: 0;
+            background: $orangeColor !important;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: $whiteColor;
+            font-size: 20px;
+            box-shadow: $buttonBoxShadow;
+            &:disabled {
+               opacity: 0.6;
+            }
+            &:active {
+                transform: scale(0.95);
+            }
+          }
+      }
+  }
+
+@media (max-width:640px){
+    .direction-class {
+        flex-direction: column;
+    }
+}
+@media (max-width:348px) {
+    .next_line_justify {
+      justify-content: center;
+      transition: all 0.5s ease;
+      margin-bottom: 10px;
+
+    }
+}

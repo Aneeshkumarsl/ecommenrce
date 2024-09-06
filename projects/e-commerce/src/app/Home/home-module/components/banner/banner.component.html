@@ -1,0 +1,70 @@
+<div class="container  my-3">
+    <div class="d-flex column column-direction">
+        <div class="first-column">
+            <div class="d-flex flex-column">
+            <div class="first-image position-relative" *ngIf="banerItems[2]">
+                <!-- <img *ngFor="let img of banerItems[2].images" src="{{img}}" alt="" /> -->
+                <img src="./assets/images/bannerImages/cashImg-1.jpg" alt="" />
+                <div class="position-absolute image-title">
+                    <h3>{{banerItems[2].section}}</h3>
+                    <span>{{banerItems[2].sectionDesc}}</span>
+                    <button [routerLink]="['/product/list']" [queryParams]="{section: banerItems[2].section}">Shop Now</button>
+                </div>
+            </div>
+            <div  class="d-flex inner">
+         <div class="second-image position-relative"  *ngIf="banerItems[5]">
+            <!-- <img *ngFor="let img of banerItems[5].images" src="{{img}}" alt="" /> -->
+            <img src="./assets/images/bannerImages/cashImg-2.jpg" alt="" />
+                <div class="position-absolute image-title">
+                    <h3>{{banerItems[5].section}}</h3>
+                    <span>{{banerItems[5].sectionDesc}}</span>
+                    <button [routerLink]="['/product/list']" [queryParams]="{section: banerItems[5].section}">Shop Now</button>
+                </div>
+            </div>
+          <div class="third-image position-relative"  *ngIf="banerItems[0]">
+            <!-- <img *ngFor="let img of banerItems[0].images" src="{{img}}" alt="" /> -->
+            <img src="./assets/images/bannerImages/cashImg-3.jpg" alt="" />
+            <div class="position-absolute image-title">
+                <h3>{{banerItems[0].section}}</h3>
+                <span>{{banerItems[0].sectionDesc}}</span>
+                <button [routerLink]="['/product/list']" [queryParams]="{section: banerItems[0].section}">Shop Now</button>
+            </div>
+        </div>
+    </div>
+    </div>
+              </div>
+        <div class="second-column">
+            <div class="d-flex flex-column-reverse">
+                <div class="first-image position-relative" *ngIf="banerItems[1]">
+                    <!-- <img *ngFor="let img of banerItems[1].images" src="{{img}}" alt="" /> -->
+                    <img src="./assets/images/bannerImages/cashImg-4.jpg" alt="" />
+                    <div class="position-absolute image-title">
+                        <h3>{{banerItems[1].section}}</h3>
+                        <span>{{banerItems[1].sectionDesc}}</span>
+                        <button [routerLink]="['/product/list']" [queryParams]="{section: banerItems[1].section}">Shop Now</button>
+                    </div>
+                </div>
+                <div  class="d-flex inner">
+             <div class="second-image position-relative" *ngIf="banerItems[3]">
+                <!-- <img *ngFor="let img of banerItems[3].images" src="{{img}}" alt="" /> -->
+                <img src="./assets/images/bannerImages/cashImg-5.jpg" alt="" />
+                <div class="position-absolute image-title">
+                    <h3>{{banerItems[3].section}}</h3>
+                    <span>{{banerItems[3].sectionDesc}}</span>
+                    <button [routerLink]="['/product/list']" [queryParams]="{section: banerItems[3].section}">Shop Now</button>
+                </div>
+                </div>
+              <div class="third-image  position-relative" *ngIf="banerItems[4]">
+                <!-- <img *ngFor="let img of banerItems[4].images" src="{{img}}" alt="" /> -->
+                <img src="./assets/images/bannerImages/cashImg-6.jpg" alt="" />
+                <div class="position-absolute image-title">
+                    <h3>{{banerItems[4].section}}</h3>
+                    <span>{{banerItems[4].sectionDesc}}</span>
+                    <button [routerLink]="['/product/list']" [queryParams]="{section: banerItems[4].section}">Shop Now</button>
+                </div>
+                </div>
+        </div>
+        </div>
+        </div>
+      </div>
+</div>

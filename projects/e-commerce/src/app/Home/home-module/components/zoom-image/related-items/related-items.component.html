@@ -1,0 +1,24 @@
+   <div class=" container  deal my-4">
+    <div class="bag ">
+        <div class="d-flex align-items-center justify-content-between top-section">
+           <div>
+            <h4>Related Items</h4>
+           </div>
+        </div>
+<swiper  class="swiper-container" [config]="ONSALE_SWIPER_CONFIG">
+   <div class="container conta-style"  *ngFor="let relatedItems of items" >
+    <div class="card">
+        <div class="img-class d-flex align-items-center justify-content-center">
+        <img  [src]= "relatedItems.images[0]"/>
+        </div>
+        <div class="w-100">
+        <h3>{{relatedItems.name}}</h3>
+        <p class="mb-0">₹ {{relatedItems.offerPrice}}</p>
+        <p class="mb-0 p-class justify-content-center" *ngIf="relatedItems.offer > 0"> Up to <span>{{relatedItems.offer}}%</span> off</p>
+    </div>
+    </div>            
+   </div>
+ </swiper>
+</div>
+</div>
+       

@@ -1,0 +1,289 @@
+@import '../../../../styles/variables.scss';
+
+.viewMode{ 
+    .editModeInput{ 
+      display: none;
+    }
+    .viewModeValue{
+      font-weight: 600;
+      font-size: 16px;
+      display: block;
+      text-transform: capitalize;
+    }
+    .viewModeLabel{
+      font-weight: bold;
+      font-size: 12px;
+      color: $orangeColor;
+    }
+  }
+  
+  .editMode{
+    .viewModeValue,.viewModeLabel {
+      display: none;
+    }
+  }
+
+  .profile-details {
+    border-bottom: 1px solid $borderColor;
+    padding-bottom: 10px;
+    span {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    button {
+      height: 40px;
+      width: 40px;
+      border: 0;
+      background:$orangeColor;
+      color: $whiteColor;
+      font-size: 20px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border:0;
+      box-shadow: $buttonBoxShadow;
+              &:active {
+                  transform: scale(0.95);
+              }
+        &.save-btn  {
+          background: $darkBlueColor;
+        }
+    }
+  }
+  
+  
+  .ecomtextinput {
+      position: relative;
+      background-color: $input-gray;
+      font-size: 1rem;
+      color: $darkBlueColor;
+      padding: 18px 12px 6px;
+      height: 50px;
+      border: 2px solid $input-gray;
+      border-radius: 2px;
+      box-shadow: none;
+    outline: none;
+    width: 100%;
+    font-weight: 500;
+      
+      & + .ecomlabel {
+          position: absolute;
+          
+          top: 50%;
+          left: 12px;
+      font-size: 15px;
+      font-weight: 500;
+          transform: translateY(-50%);
+          
+          font-size: 1rem;	
+          
+          transition: all .15s ease;
+      }
+  
+      &:hover {
+          box-shadow: 0 0 0 1px $orangeColor;
+          background-color: $whiteColor;
+          transition: all 0.25s ease;
+          border: 2px solid rgba(117, 121, 231, 0);
+          
+          & + .ecomlabel {
+              color: $blackColor;
+          }
+      }
+      
+      &:focus {
+          border: 1px solid $orangeColor;
+          background-color: $whiteColor;
+          box-shadow: none;
+          
+          & + .ecomlabel {
+              color: $orangeColor;
+              font-weight: 600;
+              font-size: 0.8rem;
+              top: 5px;
+              transform: unset;
+          }
+      }
+      
+      &:not(:placeholder-shown):not(:focus) {
+          & + .ecomlabel {
+              color: $orangeColor;
+              font-weight: 600;
+              font-size: 0.8rem;
+              top: 5px;
+              transform: unset;
+          }
+      }
+  }
+
+  .ecomtextArea {
+    position: relative;
+    background-color: $input-gray;
+    font-size: 1rem;
+    color: $darkBlueColor;
+    padding: 18px 12px 6px;
+    border: 2px solid $input-gray;
+    border-radius: 2px;
+    box-shadow: none;
+  outline: none;
+  width: 100%;
+  font-weight: 500;
+  resize: none;
+    
+    & + .ecomlabel {
+        position: absolute;
+        
+        top: 25%;
+        left: 12px;
+    font-size: 15px;
+    font-weight: 500;
+        transform: translateY(-50%);
+        
+        font-size: 1rem;	
+        
+        transition: all .15s ease;
+    }
+
+    &:hover {
+        box-shadow: 0 0 0 1px $orangeColor;
+        background-color: $whiteColor;
+        transition: all 0.25s ease;
+        border: 2px solid rgba(117, 121, 231, 0);
+        
+        & + .ecomlabel {
+            color: $blackColor;
+        }
+    }
+    
+    &:focus {
+        border: 1px solid $orangeColor;
+        background-color: $whiteColor;
+        box-shadow: none;
+        
+        & + .ecomlabel {
+            color: $orangeColor;
+            font-weight: 600;
+            font-size: 0.8rem;
+            top: 5px;
+            transform: unset;
+        }
+    }
+    
+    &:not(:placeholder-shown):not(:focus) {
+        & + .ecomlabel {
+            color: $orangeColor;
+            font-weight: 600;
+            font-size: 0.8rem;
+            top: 5px;
+            transform: unset;
+        }
+    }
+}
+
+  .card {
+    box-shadow: $cardShadow;
+    border-radius: unset !important;
+    border: unset !important;
+    padding: 10px;
+    &:not(:last-child) {
+        margin-bottom: 10px;
+    }
+}
+
+.more-btn {
+    height: 30px;
+    width: 30px;
+    border: 0;
+    background:$orangeColor;
+    color: $whiteColor;
+    font-size: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border:0;
+    box-shadow: $buttonBoxShadow;
+            &:active {
+                transform: scale(0.95);
+            }
+  }
+
+  .title-span {
+    font-size: 13px;
+    background: $darkBlueColor;
+    padding: 5px 10px;
+    color: $whiteColor;
+    font-weight: 600;
+    border-radius: 4px;
+  }
+
+  .dropDownItemAdd {
+    z-index: 2;
+    width: 10rem;
+    border-bottom: 4px solid $darkBlueColor;
+    box-shadow: $dropDownBoxShadow; 
+    ul {
+      li{
+        display: flex;
+        align-items: center;
+        font-size: 15px;
+        font-weight: 600;
+        cursor: pointer;
+        color: $orangeColor;
+        &:not(:last-child) {
+          border-bottom: 1px solid $borderColor;
+        }
+        &:focus {
+          outline: unset;
+        }
+        i{
+          color: $darkBlueColor;
+          font-size: 20px;
+        }
+      }
+    }
+  }
+
+
+  label {
+    display: flex;
+    cursor: pointer;
+    font-weight: 500;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 0.375em;
+    input {
+      position: absolute;
+      left: -9999px;
+      &:checked + span {
+        background-color: mix(#fff, $orangeColor, 84%);
+        &:before {
+          box-shadow: inset 0 0 0 0.4375em $orangeColor;
+        }
+      }
+    }
+    span {
+      display: flex;
+      align-items: center;
+      padding: 0.375em 0.75em 0.375em 0.375em;
+      border-radius: 99em; 
+      transition: 0.25s ease;
+      &:hover {
+        background-color: mix(#fff, $orangeColor, 84%);
+      }
+      &:before {
+        display: flex;
+        flex-shrink: 0;
+        content: "";
+        background-color: #fff;
+        width: 1.5em;
+        height: 1.5em;
+        border-radius: 50%;
+        margin-right: 0.375em;
+        transition: 0.25s ease;
+        box-shadow: inset 0 0 0 0.125em $orangeColor;
+      }
+    }
+  }

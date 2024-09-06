@@ -1,0 +1,63 @@
+<div class="secondBar">
+    <div class="container d-flex align-items-center justify-content-between direction">
+      <div class="logoDiv">
+      <p class="mb-0" style="font-size:35px;color:#fff" routerLink="/home">Logo</p>
+    </div>
+        <div class="search">
+           <input type="text" class="searchTerm" placeholder="What are you looking for?"  #searchValue >
+           <button type="submit" class="searchButton d-flex align-items-center" [routerLink]="['/product/list']" [queryParams]="{likeSearch:searchValue.value}">
+             <i class="mdi mdi-home-search"></i> Search
+          </button>
+        </div>
+        <div class="position-relative relativeClass">
+          <div ngbDropdown class="d-inline-block item-drop mr-3" *ngIf="userInfo.isLoggedIn">
+            <button class="cart-button" id="dropdownBasic1" ngbDropdownToggle> <i class="mdi mdi-chevron-down-circle"></i></button>
+            <div ngbDropdownMenu aria-labelledby="dropdownBasic1" class="dropDownItemOther p-2">
+              <ul class="mb-0 list-unstyled">
+                <li class="py-2" routerLink="/pages/profile"> <i class="mdi mdi-face-profile mr-2"></i> Profile</li>
+                <li class="py-2" (click)="goToOrders()"><i class="mdi mdi-truck-delivery mr-2"></i> View Orders</li>
+                <li class="py-2" (click)="logout()"><i class="mdi  mdi-power mr-2"></i> Logout</li>
+              </ul>
+            </div>
+            </div>
+
+          <div ngbDropdown class="d-inline-block">
+            <button class="cart-button" id="dropdownBasic1" ngbDropdownToggle> <i class="mdi mdi-cart"></i></button>
+            <div ngbDropdownMenu aria-labelledby="dropdownBasic1" class="dropDownItem p-2">
+             <div class="d-flex align-items-center justify-content-between cardItems">
+               <p class="mb-0 py-2" >Check Cart</p>
+               <p class="mb-0 py-2 d-flex align-items-center"><span class="px-1">{{userCart?.length}}</span>Items</p>
+             </div>
+             <div class="items" *ngIf="userCart?.length > 0">
+               <div class=" d-flex content-items  align-items-center justify-content-between" *ngFor="let cartValue of userCart">
+               <div  class="flex-width">
+                 <p class="mb-0">{{cartValue.name}}</p>
+                 <span>{{cartValue.quantity}}<i class="mdi mdi-close px-1 multi-icon"></i>₹ {{cartValue.details.offerPrice}}</span>
+               </div>
+               <div>
+                 <button class="delete-icon-button" (click)="clearFromCart(cartValue.id)" >
+                  <i class="mdi mdi-delete"></i>
+                 </button>
+               </div>
+              </div>
+
+            
+             </div>
+             <div *ngIf="userCart?.length == 0 ||  userCart?.length == undefined " class="noRec">
+              <span>No Records Found  <i class="mdi mdi-truck-outline"></i></span>
+             </div>
+
+             <div class="d-flex align-items center justify-content-end cardItems">
+                <button class="button-class" [disabled]="userCart?.length == 0 || userCart?.length == undefined" routerLink="/home/cart" >Proceed</button>
+            </div>
+           
+            </div>
+            </div>
+        <span class="position-absolute cart-items">
+          {{this.userCart?.length == undefined  ? 0 : this.userCart.length}}</span>
+      </div>
+      
+    </div>
+  </div>
+
+ 

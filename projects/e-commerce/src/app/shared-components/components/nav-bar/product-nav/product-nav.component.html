@@ -1,0 +1,38 @@
+<nav class="navbar navbar-expand-md navbar-dark sticky-top navBar-light">
+  <div class="navbar-toggler-right navBarHeight">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar"
+      aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="mdi mdi-view-sequential icon-class"></span>
+      <span class="spanClass">Product Details</span>
+    </button>
+  </div>
+
+  <div class="collapse navbar-collapse flex-column " id="navbar">
+
+    <ul class="navbar-nav  w-100 justify-content-around px-3 ulClass">
+      <li class="nav-item dropdown" *ngFor="let navItem of navItems">
+        <a class="nav-link dropdown-toggle anchor-style aClass" [routerLink]="['/product/list']" [queryParams]="{section: navItem.section}" id="navbarDropdownMenuLink"
+          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          {{navItem.section}}
+        </a>
+        <div class="dropdown-menu drop-menu-class" aria-labelledby="navbarDropdownMenuLink">
+          <a *ngFor="let subNavItem of navItem.subsection" class="dropdown-item" [routerLink]="['/product/list']" [queryParams]="{section: navItem.section,subsection: subNavItem}">{{subNavItem}}</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown nav-class">
+        <a class="nav-link dropdown-toggle anchor-style aClass"  id="navbarDropdownMenuLink"
+          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          More
+        </a>
+        <div class="dropdown-menu drop-menu-class" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="javascript:void(0)" (click)="goToOrders()">Orders</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+    </ul>
+
+
+  </div>
+
+</nav>

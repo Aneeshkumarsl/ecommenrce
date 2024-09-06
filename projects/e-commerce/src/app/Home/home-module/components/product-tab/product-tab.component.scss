@@ -1,0 +1,83 @@
+
+ .tabs {
+	display: flex;
+    flex-wrap: wrap; 
+    align-items: center;
+    justify-content: space-between;
+}
+
+.tabs__item-input {
+	display: none;	
+		&:checked  {		
+		+ .tabs__item-label {
+			border-color: #ef6c00;	
+			
+			+ .tabs__item-content {
+				display: block;
+			}
+		}		
+	}
+}
+
+.tabs__item-label {
+    text-transform: uppercase;
+	order: 1; 
+	display: block;
+	padding: 1rem 2rem;
+	margin-right: 0.2rem;
+	cursor: pointer;
+	border-bottom: .2rem solid transparent;
+  font-weight: bold;
+  transition: background ease 0.2s;
+  font-size: 14px;
+  color: #777;
+}
+
+.tabs__item-content {
+  order: 99;
+  flex-grow: 1;
+	width: 100%;
+	display: none;
+  padding: 1rem 0rem;
+  background: #fff;
+}
+
+
+@media (max-width: 45em) {
+  .tabs__item-content,
+  .tabs__item-label {
+    order: initial;
+  }
+	
+  .tabs__item-label {
+    width: 100%;
+    margin-right: 0;
+    margin-top: 0.2rem;
+    background: #f3f3f3;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    &::after {
+      font-family: 'Material Design Icons' !important;
+      content: '\F0140' !important;
+      font-size: 20px;
+    }
+    
+  }
+  .tabs__item-input {
+    display: none;	
+      &:checked  {		
+      + .tabs__item-label {
+        &::after {
+          font-family: 'Material Design Icons' !important;
+          content: '\F0143' !important;
+          font-size: 20px;
+        }
+        
+        + .tabs__item-content {
+          display: block;
+        }
+      }		
+    }
+  }
+}

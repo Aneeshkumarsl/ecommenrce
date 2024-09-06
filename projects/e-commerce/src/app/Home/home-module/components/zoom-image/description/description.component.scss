@@ -1,0 +1,244 @@
+
+@import '../../../../../styles/variables.scss';
+.nav-tabs {
+    display: none;
+  }
+  
+  @media (min-width: 768px) {
+    .nav-tabs {
+      display: flex;
+      flex-flow: column nowrap;
+    }
+    .nav-tabs {
+      border-bottom: none;
+      border-right: 1px solid #f8f9fa;
+      display: flex;
+      
+    }
+    .nav-tabs {
+        margin: 0 15px 0 0;
+        width: 23%;
+        height: 100%;
+    }
+    .nav-tabs .nav-item + .nav-item {
+      margin-top: 0.59rem;
+    }
+    .nav-tabs .nav-link {
+      transition: border-color 0.125s ease-in;
+      white-space: nowrap;
+      height: 69px;
+      width: 97%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 8px;
+      box-shadow: 0px 1px 0px -1px rgba(0, 0, 0, 0.2), 0px 1px 0px 0px rgba(0, 0, 0, 0.1), 0px 0px 4px 0px rgba(0, 0, 0, 0.12) !important;
+      
+    }
+
+    .tabSpan {
+        font-size: 17px;
+        font-weight: 700;
+        color:$mediumGrayColor;
+        text-transform: capitalize;
+    }
+    .nav-tabs .nav-link.active  {
+      border-bottom-color: #ddd;
+      border-right-color: #fff;
+      border-top-right-radius: 0;
+        border-top-left-radius: 8px !important;
+        border-bottom-left-radius: 8px !important;
+        border-radius: 0;
+        margin-left: -1px;
+      width: 101%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-left: 5px solid $orangeColor;
+      box-shadow: 0px 1px 0px -5px rgba(0, 0, 0, 0.2), 0px 0px 0px 0px rgba(0, 0, 0, 0.14), -2px 0px 4px 0px rgba(0, 0, 0, 0.12) !important;
+      .tabSpan {
+        color: $orangeColor;
+    }
+    }
+    .nav-tabs .nav-item {
+      margin-bottom: 0px !important;
+  }
+    .card {
+      border: none;
+    }
+  
+    .card .card-header {
+      display: none;
+    }
+  
+    .card .collapse {
+      display: block;
+    }
+  }
+
+  .tabClass {
+   flex-basis: 80%;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    box-shadow: -4px 7px 1px -8px rgba(0, 0, 0, 0.2), 0px 0px 0px -24px rgba(0, 0, 0, 0.0), 3px 0px 4px 0px rgba(0, 0, 0, 0.06) !important;
+    margin-left: -15px;
+    border-right: 5px solid $orangeColor;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+  }
+  
+  @media (max-width: 767px) {
+    .tab-pane {
+      display: block !important;
+      opacity: 1;
+      margin-left: unset !important;
+      margin-bottom: 10px;
+      box-shadow:-2px 4px 1px -8px rgba(0, 0, 0, 0.2), 0px 0px 0px 0px rgba(0, 0, 0, 0.14), 3px 0px 4px 0px rgba(0, 0, 0, 0.12) !important;
+
+    }
+    .tabClass {
+        border-top: unset;
+        border-right: unset;
+        border-bottom: unset;
+        height: unset !important;
+        margin-left: 0px !important;
+        box-shadow:unset !important;
+        flex-basis: 100% !important;
+      }
+      .tabSpan {
+        font-size: 17px;
+        color:#636567ab;
+    }
+    .arrowIcon::after {
+        font-family: 'Material Design Icons' !important;
+        content: '\F0142' !important;
+      float: right;
+      color: $darkBlueColor;
+    }
+     .arrowIcon[aria-expanded="true"]::after {
+        font-family: 'Material Design Icons' !important;
+        content: '\F0143' !important;
+          float: right;
+          color:$orangeColor;
+        }
+
+        .accordianButtonClass{
+            font-size: 17px;
+            color: $darkBlueColor !important;
+            font-weight: 600;      
+        }
+     
+        .accordianButtonClass[aria-expanded="true"] {
+          color: $orangeColor !important;
+        }
+
+    .paddingTop {
+      padding-top: 20px !important;
+    }
+    .marginTop {
+      margin-top: 0px !important;
+    }
+    
+  }
+  .card-header {
+    padding: .75rem 1.25rem;
+    margin-bottom: 0;
+    background-color: #fff;
+    border-bottom: 1px solid rgba(0,0,0,.125);
+}
+.btn-link {
+  
+    text-decoration: none !important;
+    width: 100% !important;
+    text-align: left !important;
+
+}
+.btn{
+    &:focus {
+       box-shadow: none !important;
+    }
+}
+.tab-content>.active {
+    .tabSpan {
+        color:$orangeColor;
+    }
+}
+
+.fade:not(.show) {
+    opacity: 1 !important;
+   
+}
+
+.vertTabClass {
+    flex-basis: 80%;
+    padding-right: 25px;
+
+}
+
+.h4-class{
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+    color: $orangeColor;
+    text-transform: capitalize;
+}
+
+.instructions {
+    flex-basis: 20%;
+    .cardClass {
+        margin-bottom: 10px;
+        background:$lightBlack !important;
+        border: 0;
+        box-shadow: none !important;
+    }
+    i {
+        color: $orangeColor;
+        font-size: 41px;
+        margin-right: 10px;
+        line-height: 65px;
+        clear: both;
+        width: auto;
+        height: 100%;
+        padding: 0 3px;
+    }
+    p {
+        font-weight: bold;
+        font-size: 14.5px;
+        color: $blackColor;
+        text-transform: uppercase;
+    }
+    span{
+       color: $mediumGrayColor;
+    }
+}
+
+@media (max-width:1199px) {
+  .flex-wrapClass{
+    flex-wrap: wrap;
+  }
+  .vertTabClass {
+    flex-basis: 100%;
+    padding-right: 0px;
+  }
+  .instructions {
+    flex-basis: 100%;
+    margin-top: 15px;
+    .card-outer {
+      display: flex;
+      justify-content: space-between;
+      .cardClass {
+        flex-basis: 49.5%;
+      }
+    }
+  }
+}
+@media (max-width:500px) {
+  .instructions {
+    .card-outer {
+      flex-direction: column;
+      .cardClass {
+        flex-basis: 100%;
+      }
+    }
+  }
+}

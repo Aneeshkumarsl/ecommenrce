@@ -1,0 +1,47 @@
+ 
+ <div class="marginClass">
+  <div class="filterClass d-flex align-items-center justify-content-between">
+    <h2>Filter</h2>
+    <button (click)="clearFilters()" *ngIf="filterItems.length > 0">
+      <p class="mr-2"><i class="mdi mdi-delete-empty"></i></p>
+      clear
+    </button> 
+  </div>
+  <div [ngClass]="filterItems.length > 0 ? 'active' : 'inactive'">
+    <div class="div-class">
+      <ul class="tags">
+        <li *ngFor="let items of filterItems"><a href="javascript:void(0)" class="tag">{{items}}</a></li>
+      </ul>
+      </div>
+</div> 
+ </div>
+ 
+ <div *ngFor="let values of header;let i = index" class="marginClass">
+     <div>
+        <button (click)="toggleAccordion(i)" class="h2-active-class">
+          <h2>{{ values.title }}</h2>
+           <span *ngIf="!isMenuOpen[i]"><i class="mdi mdi-chevron-down"></i></span>
+           <span *ngIf="isMenuOpen[i]"><i class="mdi mdi-chevron-up"></i></span>
+        </button>
+    </div>
+        <div [ngClass]="isMenuOpen[i] ? 'active' : 'inactive'">
+            <div class="div-class">
+              <div *ngIf="values.title !== 'Price Range'">
+                <div class="d-flex div-margin-class" *ngFor="let check of values.checkBox;let i = index">
+                <input type="checkbox" id="{{check.val}}" (click)="onChange(check.val, $event, values.title)" #checkboxes [checked]="check.checked">
+                <label for="{{check.val}}">
+                  <span></span>
+                  {{ check.val }}
+                </label>
+                </div>
+              </div>
+              <div *ngIf="values.title == 'Price Range'">
+                <div class="clear-div" *ngIf="filter.priceRange.minVal > 0 || filter.priceRange.maxVal < 10000">
+                  <button class="button-class" (click)="priceClear()"><i class="mdi mdi-delete-empty mr-1"></i>clear</button>
+                </div>
+                <ngx-slider [(value)]="filter.priceRange.minVal" [(highValue)]="filter.priceRange.maxVal" [options]="options"  (userChangeEnd)="valueChange()"></ngx-slider>
+              </div>
+              </div>
+        </div>
+        </div>
+

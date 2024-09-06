@@ -1,0 +1,56 @@
+<div class="app-modal-backdrop show"></div>
+<div class="app-modal" *ngIf="singleItemview.length > 0">
+    <div class="app-modal-dialog">
+
+        <div class="app-modal-content">
+            <div class="modal-header app-modal-header">
+                <button class="app-modal-close close" (click)="cancelBtnClick()"><i class="mdi mdi-close-thick"></i></button>
+            </div>
+            <div class="modal-body d-flex align-items-center direction-class" *ngFor="let values of singleItemview">      
+                <div class="imageClass d-flex align-items-center justify-content-center">
+                    <img [src]="values.images[0]" alt="product_img">
+                </div>
+                <div class="imageClass">
+                    <h2 class="mb-0">{{values.section}}</h2>
+                    <p class="my-1">{{values.name}}</p>
+                    <h4 *ngIf="values.offer > 0">
+                        <del>₹{{values.actualPrice}}</del>
+                        <span>{{values.offer}}% off</span>
+                    </h4>
+                    <h3 class="price">₹ {{values.offerPrice}}</h3>
+                    <div class="discription">
+                        <p class="font-weight-bold">Product Details</p>
+                        <p class="text-muted productDiscription mb-0 text-wrap">
+                          {{values.desc}}
+                        </p>
+                    </div>
+                    <div class="py-1 mt-2">
+                        <p>
+                            <span class="text-muted">Availability:</span>
+                            <span class="px-1 stock">In Stock</span>
+                        </p>
+
+                        <div class="quantityClass d-flex flex-column">
+
+                            <p class="font-weight-bold">Quantity</p>
+                            <div class="d-flex align-items-center flex-wrap next_line_justify ">
+                                <div class="d-flex flex-grow-1 next_line_justify">
+                            <button (click)="decreament(itemCount)" [disabled]="itemCount == 1" type="button"><i class="mdi mdi-minus"></i></button>
+                            <input readonly=""  [value]="itemCount" type="text" class="mx-3">
+                            <button (click)="increament(itemCount)"  type="button"><i class="mdi mdi-plus-thick"></i></button>
+                        </div>
+                        <div class="d-flex">
+                            <button type="button" class="mx-2" (click)="addToCart(values)"><i class="mdi mdi-cart"></i></button>
+                            <button  type="button" (click)="imageDetailedView(values._id)" ><i class="mdi mdi-eye-plus-outline"></i></button>
+                        </div>
+                            </div>
+                         </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer app-modal-footer text-right">
+            </div>
+        </div>
+    </div>
+
+</div>

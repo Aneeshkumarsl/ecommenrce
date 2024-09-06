@@ -1,0 +1,113 @@
+@import '../../../../styles/variables.scss';
+
+.navbar {
+    padding:0rem;
+  }
+  
+  .dropdown .dropdown-menu {
+    border-radius:0;
+   }
+  
+  
+  /* Medium devices (tablets, 768px and up) 
+  The navbar toggle appears at this breakpoint */
+  @media (min-width: 768px) {  
+  .dropdown:hover .dropdown-menu {
+      display: block;
+      margin-top: 0;
+    border-radius:0;
+   }
+  }
+  
+.navBar-light {
+    background: $lightGrayColor;
+    z-index: 1;
+    li {
+        height: 65px; 
+        align-items: center;
+        display: flex;
+    
+    }
+    a {
+        color: $blackColor !important;
+        &:hover {
+            color: $blackColor;
+        }
+    }
+    .anchor-style {
+        font-size: 16px;
+        font-weight: 600;
+    }
+}
+
+@media (max-width:768px) {
+    .navBarHeight {
+        padding: 15px 0;
+        margin-left: auto;
+        margin-right: auto;
+        
+        button {
+            display: flex;
+            align-items: center;
+            .icon-class {
+                font-size: 25px;
+                color:  $whiteColor;
+                margin: 0 10px;
+                height: 35px;
+                width: 35px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background:$orangeColor;
+                border-radius: 50%;
+                box-shadow: $buttonBoxShadow;
+                &:active {
+                    transform: scale(0.95);
+                }
+            }
+            .spanClass {
+                color: $darkBlueColor;
+                font-size: 17px;
+                font-weight: 700;
+            }
+
+        }
+    }
+
+    .ulClass {
+        li {
+            padding-left: 20px;
+            margin-bottom: 4px;
+            border-bottom: 2px solid $darkBlueColor;
+            .aClass {
+                color:$darkBlueColor;
+            }
+        }
+    }
+}
+
+.drop-menu-class{
+    box-shadow: $dropDownBoxShadow;
+    border-top: 3px solid $orangeColor;
+    border-bottom: 3px solid $orangeColor;
+    border-left: 0;
+    border-right: 0;
+    background: $lightGrayColor;
+    a{
+    font-size: 15px;
+    font-weight: 600;
+    padding: 12px;
+    &:hover {
+        background: $orangeColor;
+        color: $whiteColor !important;
+    }
+    }
+}
+@media (min-width:768px){
+    .nav-class {
+        .dropdown-menu {
+            left: unset !important;
+            right: -30px !important;
+        }
+    }
+}

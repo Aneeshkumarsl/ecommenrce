@@ -1,0 +1,19 @@
+@import "../../../styles/variables.scss";
+.image-style {
+    width: 83px;
+}
+
+.loaderMask{
+    position: fixed; 
+    height: 100%; 
+    width: 100%; 
+    z-index: 1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0; 
+    background-color: rgba($orangeColor, 0.3);
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+  }

@@ -1,0 +1,22 @@
+<div class="container py-3">
+<div class="tabs">
+	<input class="tabs__item-input" type="radio" name="tabs" id="tabone" checked="checked" (click)="featuredProducts('isFeatured')">
+	<label class="tabs__item-label" for="tabone">Featured Products</label>
+	<div class="tabs__item-content">
+              <app-featured [config] = "SWIPER_CONFIG" [productItem]="productItems"></app-featured>            
+        </div>
+        
+  
+  <input class="tabs__item-input" type="radio" name="tabs" id="tabtwo" (click)="featuredProducts('isFeatured')">
+  <label class="tabs__item-label" for="tabtwo">Latest Products</label>
+  <div class="tabs__item-content">
+      <app-latest [productItem]="productItems" [config]="SWIPER_CONFIG"></app-latest>
+          </div>
+  
+  <input class="tabs__item-input" type="radio" name="tabs" id="tabthree" (click)="featuredProducts('isTopSelling')">
+  <label class="tabs__item-label" for="tabthree">On sale products</label>
+  <div class="tabs__item-content">
+   <app-onsale [productItem]="productItems" [config]="SWIPER_CONFIG"></app-onsale>
+  </div>
+</div>
+</div>

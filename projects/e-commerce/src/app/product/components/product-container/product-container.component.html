@@ -1,0 +1,50 @@
+<div class="container d-flex my-4 flex-class">
+    <div class="firstAlign">
+        <app-product-filter  [filterParams]="filterParams" (filterProduct) = "productList($event)" ></app-product-filter>
+    </div>
+    <div class="secondAlign">
+        <div class="card cardClass">
+           
+           <div class="d-flex align-items-center justify-content-between card-item">
+            <div class="d-flex align-items-center item-bottom ">
+                <span class="span-style">Sort By : </span>
+            <select class="select-class">
+             <option class="my-2">Choose One</option>
+                <option class="my-2">Price low to high</option>
+                <option>price high to low</option>
+                <option>latest products</option>
+            </select>
+            </div>
+            <div>
+                <ul class="list-unstyled mb-0 d-flex">
+                    <li>
+                        <button [ngClass]="{'button-bg-color' : viewType == 'grid'}" (click)="changeViewType('grid')"> <i class="mdi mdi-view-comfy"></i>  </button>
+                    </li>
+                    <li class="mx-2">
+                        <button [ngClass]="{'button-bg-color' : viewType == 'largeGrid'}" (click)="changeViewType('largeGrid')"> <i class="mdi mdi-view-module"></i>  </button>
+                    </li>
+                    <li>
+                        <button [ngClass]="{'button-bg-color' : viewType == 'list'}" (click)="changeViewType('list')"><i class="mdi mdi-view-list"></i></button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        </div>
+        <div class="card cardClass" *ngIf="productItems.length > 0">
+      
+            <app-product-small-grid *ngIf="viewType == 'grid'" [products] = "productItems"></app-product-small-grid>  
+
+            <app-product-large-grid *ngIf="viewType == 'largeGrid'" [products] = "productItems"></app-product-large-grid>  
+                 
+            <app-product-list-view *ngIf="viewType == 'list'" [products] = "productItems"></app-product-list-view>
+
+            <app-pagination [valueNumber]="valueNumber" [totalCount]="totalCount" [pages]="pages" [pageNumber]="pageNumber"
+            (previousFun)="previous($event)" (setPageFun)="setPage($event)" (nextFun)="next($event)" ></app-pagination>
+
+        </div>
+        
+        <div class="d-flex align-items-center justify-content-center" *ngIf="productItems.length == 0">
+            <img class="noData" src="../../../../assets/images/noRec/no_result.gif" />
+        </div>
+    </div>
+</div>
