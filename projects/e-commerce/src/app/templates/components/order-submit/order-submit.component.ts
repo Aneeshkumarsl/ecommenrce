@@ -5,9 +5,9 @@ import { ToastService } from 'projects/e-commerce/src/app/sharedServices/toaster
 import { ApiService } from 'projects/e-commerce/src/app/sharedServices/apiService';
 import { SharedCartService } from 'projects/e-commerce/src/app/sharedServices/cartDataService';
 import {
-  FormBuilder,
+  UntypedFormBuilder,
   FormControl,
-  FormGroup,
+  UntypedFormGroup,
   Validators,
 } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -26,14 +26,14 @@ export class OrderSubmitComponent implements OnInit {
   userData: any = {};
   isReady: boolean = false;
   viewMode: boolean = false;
-  public useraddEditForm!: FormGroup;
+  public useraddEditForm!: UntypedFormGroup;
   totalAmount = 0;
 
   constructor(
     private apiService: ApiService,
     public toastService: ToastService,
     private sharedCartService: SharedCartService,
-    private formBuilder: FormBuilder,
+    private formBuilder: UntypedFormBuilder,
     private router:Router
   ) {
     this.sharedCartService.userCart.subscribe((userCart: any) => {

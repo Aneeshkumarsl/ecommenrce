@@ -4,9 +4,9 @@ import { tap, catchError } from 'rxjs/operators';
 import { of } from 'rxjs';
 import { ToastService } from 'projects/e-commerce/src/app/sharedServices/toaster.services';
 import {
-  FormBuilder,
+  UntypedFormBuilder,
   FormControl,
-  FormGroup,
+  UntypedFormGroup,
   Validators,
 } from '@angular/forms';
 
@@ -19,7 +19,7 @@ export class ProfileComponent implements OnInit {
   public viewMode: boolean = true;
   userData: any = {};
   imgURL: any = '../../../../../assets/user.png';
-  public userEditForm!: FormGroup;
+  public userEditForm!: UntypedFormGroup;
   isReady: boolean = false;
   checkoutForm = this.formBuilder.group({
     name: 'asdasd',
@@ -29,7 +29,7 @@ export class ProfileComponent implements OnInit {
   constructor(
     private apiService: ApiService,
     public toastService: ToastService,
-    private formBuilder: FormBuilder
+    private formBuilder: UntypedFormBuilder
   ) {}
 
   ngOnInit(): void {

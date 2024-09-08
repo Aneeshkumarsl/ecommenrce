@@ -1,8 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import {
-  FormBuilder,
+  UntypedFormBuilder,
   FormControl,
-  FormGroup,
+  UntypedFormGroup,
   Validators,
 } from '@angular/forms';
 import { ApiService } from 'projects/e-commerce/src/app/sharedServices/apiService';
@@ -18,14 +18,14 @@ export class AddressComponent implements OnInit {
 
   public viewMode: boolean = false;
   @Input() userData:any
-  public useraddEditForm!: FormGroup;
+  public useraddEditForm!: UntypedFormGroup;
   isReady: boolean = false;
   isHomeAddType: boolean = true;
   public addressType:string = "home"
   constructor(
     private apiService: ApiService,
     public toastService: ToastService,
-    private formBuilder: FormBuilder
+    private formBuilder: UntypedFormBuilder
 
   ) { }
 

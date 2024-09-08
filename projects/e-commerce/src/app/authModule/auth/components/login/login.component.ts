@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {
-  FormGroup,
-  FormBuilder,
+  UntypedFormGroup,
+  UntypedFormBuilder,
   Validators,
   FormControl,
 } from '@angular/forms';
@@ -20,13 +20,13 @@ import { of } from 'rxjs';
 })
 export class LoginComponent implements OnInit {
   containerClass: string = 'container my-3';
-  public loginForm!: FormGroup;
-  public registerForm!: FormGroup;
+  public loginForm!: UntypedFormGroup;
+  public registerForm!: UntypedFormGroup;
   public submitted: boolean = false;
   public loginSubmitted: boolean = false;
 
   constructor(
-    private formBuilder: FormBuilder,
+    private formBuilder: UntypedFormBuilder,
     private service: ApiService,
     private auth: AuthService,
     public toastService: ToastService,
