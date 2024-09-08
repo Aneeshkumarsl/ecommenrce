@@ -25,7 +25,6 @@
             "main": "projects/e-commerce/src/main.ts",
             "polyfills": "projects/e-commerce/src/polyfills.ts",
             "tsConfig": "projects/e-commerce/tsconfig.app.json",
-            "aot": true,
             "assets": [
               "projects/e-commerce/src/favicon.ico",
               "projects/e-commerce/src/assets"
@@ -36,7 +35,13 @@
             ],
             "scripts": [
               "node_modules/bootstrap/dist/js/bootstrap.min.js"
-            ]
+            ],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -66,7 +71,8 @@
                 }
               ]
             }
-          }
+          },
+          "defaultConfiguration": ""
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
